@@ -1,0 +1,20 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.pixel-container {
+    height: 100%;
+
+    display: grid;
+    /* grid-template-columns: repeat(64, 1fr); /* Dette blir no gjort i JS */
+    /* grid-template-rows: repeat(36, 1fr); */
+    /* Adjust the gap size between pixels */
+    /* gap: 1px;  */
+}
+
+.pixel {
+    border: 1px solid black; /* Adjust the border style */
+}

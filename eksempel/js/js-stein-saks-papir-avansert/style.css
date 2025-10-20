@@ -1,0 +1,62 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    background-color: black;
+}
+
+#spillvalg {
+    width: 700px;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+
+    background-color: white;
+    padding: 2rem;
+}
+
+#utskrift {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+
+#vinn {
+    color: green;
+}
+
+#tap {
+    color: red;
+}
+
+#sluttresultat {
+    color: white;
+    text-align: center;
+}
+
+/* For å leggje til ein hover-effekt på bileta */
+#spillvalg img {
+    transition: transform 0.3s ease-in-out;
+}
+
+#spillvalg img:hover {
+    transform: translateY(-10px);
+    filter: drop-shadow(0 0 5px rgba(255, 0, 255, 0.8));
+}
+
+#resetinformasjon {
+    width: 50%;
+    height: 200px;
+    position: absolute;
+    bottom: 1rem;
+    
+    background-color: yellow;
+    color: black;
+    text-align: center;
+}
