@@ -1,0 +1,77 @@
+#Layer_1 {
+    fill: red;
+
+}
+
+#venstre, #hoyre {
+    fill: blue;
+}
+
+@keyframes fargeendring {
+    0% {
+        fill: blue;
+    }
+    25% {
+        fill: red;
+    }
+    50% {
+        fill: green;
+    }
+    75% {
+        fill: yellow;
+    }
+    100% {
+        fill: blue;
+    }
+}
+
+@keyframes storrelse {
+    0% {
+        width: 800px;
+    }
+    50% {
+        width: 0px;
+    }
+    100% {
+        width: 800px;
+    }
+}
+
+#venstre, #hoyre {
+    animation: fargeendring 1s infinite; /* Bruker 1 sekund på å gå gjennom heile animasjonen over */
+}
+
+#Layer_1 {
+    animation: storrelse 4s infinite; /* Bruker 4 sekund på å endre størrelse */
+}
+
+#animert {
+    border: 1px solid black;
+    height: 20px;
+    position: relative;
+    width: 800px;
+}
+
+#firkant {
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 780px;
+}
+
+@keyframes flyttFirkant {
+    0% {
+        left: 0px;
+    }
+    50% {
+        left: 780px;
+    }
+    100% {
+        left: 0px;
+    }
+}
+
+#firkant {
+    animation: flyttFirkant 8s linear infinite;
+}
