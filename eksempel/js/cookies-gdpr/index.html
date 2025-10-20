@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cookie-samtykke</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+    <button id="check-consent">Sjekk samtykke</button>
+
+    <div id="cookie-banner" class="cookie-banner hidden">
+        <p>Vi bruker informasjonskapsler for å forbedre din opplevelse. Du kan velge hvilke du godtar.</p>
+        <div class="cookie-buttons">
+        <button id="accept-all">Godta alle</button>
+        <button id="decline-all">Avslå</button>
+        <button id="customize">Tilpass</button>
+        </div>
+    </div>
+
+    <div id="cookie-settings" class="cookie-settings hidden">
+        <h3>Tilpass samtykke</h3>
+        <label><input type="checkbox" id="necessary" checked disabled /> Nødvendige (alltid på)</label><br/>
+        <label><input type="checkbox" id="analytics" /> Statistikk</label><br/>
+        <label><input type="checkbox" id="marketing" /> Markedsføring</label><br/>
+        <button id="save-preferences">Lagre valg</button>
+    </div>
+
+    <button id="change-consent" class="change-consent">Endre samtykke</button>
+</body>
+</html>

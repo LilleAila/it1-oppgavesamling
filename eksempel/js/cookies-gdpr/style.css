@@ -1,0 +1,31 @@
+.cookie-banner, .cookie-settings {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #f4f4f4;
+    padding: 1em;
+    border-top: 2px solid #ccc;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.cookie-buttons button, .cookie-settings button {
+    margin-right: 10px;
+    padding: 0.5em 1em;
+}
+
+.hidden {
+    display: none;
+}
+
+.change-consent {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    padding: 0.5em;
+    background: #eee;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+  
