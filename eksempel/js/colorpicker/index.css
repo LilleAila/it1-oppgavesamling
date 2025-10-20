@@ -1,0 +1,9 @@
+#colorpicker {
+    cursor: crosshair;
+}
+
+main {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+}
