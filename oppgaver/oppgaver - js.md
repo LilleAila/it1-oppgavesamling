@@ -345,6 +345,8 @@ Bruk tid på å planlegge løysinga! Gjerne saman med nokon andre. Går det an �
 
 (Fleire detaljar om krypteringa blir gjennomgått i timane, samt “oppstartshjelp”.)
 
+Løysingsforslag: [kryptering, basic](../eksempel/sikkerheit/kryptering-basic/) eller [kryptering med GUI, og bruteforce](../eksempel/sikkerheit/kryptering/)
+
 ## 28. Array-repetisjon, “skryteApp”
 Det er dårleg stemining i klasserommet. Elevar snakkar stygt til kvarandre. Løysinga blir derfor å lage eit program som gjer som resultat noko som dette:
 
@@ -481,3 +483,22 @@ Forslag:
 - Analyser data (listene frå punktet over):
     - Forsøk å gjennomfør ein tolkning av data du sit att med
     - Kva type personar blir "typisk likt"? Ser du noko mønster?
+
+## ⭐ 35. Tid brukt til å sjå på filmar og seriar
+
+### Enkel versjon:
+
+Lag eit program som konverterer eit valfritt tal i minutt til timar og minutt. 
+
+For eksempel, dersom brukaren skriv inn 130 minutt, skal programmet svare med "2 timar og 10 minutt".
+
+### Avansert versjon:
+
+Lag ein versjon som hentar speletid for filmar via ein API (til dømes [The Movie Database API](https://developers.themoviedb.org/3/getting-started/introduction)).
+- Hent speletid for ein film du søker etter (i minutt).
+- Konverter denne til timar og minutt, og skriv ut resultatet på nettsida.
+
+Sjå eksempel på ferdigprodukt, som viser kor mykje tid du har kasta vekk på å sjå TV-seriar:
+[Calculate your time spent on watching TV shows](https://tiii.me/)
+
+<img src="../bilder/tv-show-tid-brukt.png" width="400">
