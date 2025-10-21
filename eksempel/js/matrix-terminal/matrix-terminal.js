@@ -1,7 +1,7 @@
 const output = document.querySelector("#tekstboks");
 
 // Initialiser tekstfeltet med tilgjengelege kommandoar
-output.value = `Available commands:\n- visit <url>\n- help\n- clear\n- exit\n\n`;
+output.value = `Available commands:\n- visit <url>\n- help\n- clear\n- info (about client)\n- exit\n\n`;
 
 document.querySelector("#inputfelt").addEventListener("change", function(event) {
     const inputField = document.querySelector("#inputfelt");
@@ -32,13 +32,27 @@ function processCommand(command) {
 
     // Dersom bruken skriv "help", gi hjelp
     if (command.toLowerCase() === "help") {
-        return `Available commands: visit <url>, help, clear, exit`;
+        return `Available commands: visit <url>, help, clear, info, exit`;
     }
     
     // Dersom brukeren skriv "clear", tøm textarea
     if (command.toLowerCase() === "clear") {
         output.value = ""; // Tøm textarea
         return "Cleared the output.";
+    }
+
+    // Dersom brukaren skriv "info", gi informasjon om nettlesaren
+    if (command.toLowerCase() === "info") {
+        const lines = [
+            `Browser Info: ${navigator.userAgent}`,
+            `Platform: ${navigator.platform}`,
+            `Language: ${navigator.language}`,
+            `Cookies Enabled: ${navigator.cookieEnabled}`,
+            `Screen Size: ${window.screen.width}x${window.screen.height}`,
+            `Timezone: ${Intl.DateTimeFormat().resolvedOptions().timeZone}`,
+            // `GeoLocation: ${geo}`
+        ];
+        return lines.join('\n');
     }
 
     // Dersom brukaren skriv "exit", lukk vinduet
@@ -50,4 +64,19 @@ function processCommand(command) {
 
     // Default svar dersom kommandoen ikkje er gjenkjent
     return `Command not recognized: ${command}`;
+}
+
+// For å hente geolokasjon (om tilgjengeleg)
+async function getGeolocation() {
+    if (!navigator.geolocation) {
+        return "Geolocation is not supported by this browser.";
+    }
+    try {
+        const pos = await new Promise((resolve, reject) => {
+            navigator.geolocation.getCurrentPosition(resolve, err => reject(err), { timeout: 10000 });
+        });
+        return `Latitude: ${pos.coords.latitude}, Longitude: ${pos.coords.longitude}`;
+    } catch (err) {
+        return `Geolocation error: ${err.message}`;
+    }
 }
