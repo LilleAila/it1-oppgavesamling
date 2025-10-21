@@ -502,3 +502,23 @@ Sjå eksempel på ferdigprodukt, som viser kor mykje tid du har kasta vekk på �
 [Calculate your time spent on watching TV shows](https://tiii.me/)
 
 <img src="../bilder/tv-show-tid-brukt.png" width="400">
+
+## 36. Stein, saks, papir
+
+Lag eit spel der brukaren spelar mot datamaskina i stein, saks, papir.
+- Brukaren skal kunne velje mellom stein, saks eller papir ved å trykke på ein knapp eller bilete.
+- Datamaskina skal velje tilfeldig mellom stein, saks eller papir.
+- Programmet skal avgjere kven som vinn basert på reglane i spelet:
+    - Stein knuser saks
+    - Saks klipper papir
+    - Papir dekker stein
+- Resultatet skal visast på nettsida, saman med kva val brukaren og datamaskina gjorde.
+
+<img src="../bilder/stein-saks-papir.png" width="400">
+
+Tips til vidare arbeid:
+- Utvide spelet ved å legge til poengsystem, der brukaren får poeng for kvar gong hen vinn. Vis total poengsum på nettsida.
+- Du kan også legge til animasjon eller lyd for å gjere spelet meir engasjerande.
+- Lag ein "beste av 3" modus, der spelet held fram til ein av partane har vunne 3 gonger.
+
+Løysingsforslag: [Stein, saks, papir](../eksempel/js/js-stein-saks-papir-avansert/)
