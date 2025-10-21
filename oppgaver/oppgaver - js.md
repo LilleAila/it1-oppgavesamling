@@ -492,6 +492,8 @@ Lag eit program som konverterer eit valfritt tal i minutt til timar og minutt.
 
 For eksempel, dersom brukaren skriv inn 130 minutt, skal programmet svare med "2 timar og 10 minutt".
 
+Løysingsforslag: [Konvertering av tid](../oppgaver/løsningsforslag/sekunder-konvertering/) NB: Dette løysingsforslaget brukar sekund som input.
+
 ### Avansert versjon:
 
 Lag ein versjon som hentar speletid for filmar via ein API (til dømes [The Movie Database API](https://developers.themoviedb.org/3/getting-started/introduction)).

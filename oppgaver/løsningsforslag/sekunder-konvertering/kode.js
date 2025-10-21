@@ -2,7 +2,7 @@
 const utskrift = document.getElementById("utskrift");
 
 // Hentar antall sekund frå den som besøker nettsida
-let tidSekunder = prompt("Skriv inn antall sekunder:");
+let tidSekunder = parseInt(prompt("Skriv inn antall sekunder:"));
 
 // Konverterer sekund til timar, minutt og sekund
 let timar = Math.floor(tidSekunder / 3600); // 1 time = 3600 sekund
