@@ -108,30 +108,42 @@ document.getElementById('utskrift').innerText = `Prisen er ${pris} kr.`;
 
 Noen vanlige datatyper i JavaScript:
 
-- Number: både heltall og desimaler (f.eks. `3` og `3.14`)
-- String: tekst, enten med doble eller enkle anførselstegn (`"tekst"` eller `'tekst'`)
-- Boolean: `true` eller `false`
-- Null: representerer "ingen verdi" (`null`)
-- Undefined: variabel uten verdi (`undefined`)
-- Object: samling av nøkkel-verdi-par (f.eks. `{ navn: "Jo", alder: 17 }`)
-- Array: liste av verdier (f.eks. `[1, 2, 3]`)
+- **Number**: både heltall og desimaler (f.eks. `3` og `3.14`)
+- **String**: tekst, enten med doble eller enkle anførselstegn (`"tekst"` eller `'tekst'`)
+- **Boolean**: `true` eller `false`
+- **Null**: representerer "ingen verdi" (`null`)
+- **Undefined**: variabel uten verdi (`undefined`)
+- **Object**: samling av nøkkel-verdi-par (f.eks. `{ navn: "Jo", alder: 17 }`)
+- **Array**: liste av verdier (f.eks. `[1, 2, 3]`) - **NB: arrays kan inneholde ulike datatyper**. 
 
-Eksempler og tekst-manipulasjon:
+Les mer om objekter og arrays i [egen guide](04_arrays_og_objekter.md).
+
+Eksempler:
 
 ```js
+// String, og noen string-metoder
 let navn = "Jo Bjørnar";
 console.log(navn[0]); // 'J'
+// Merk: strings er immutable — du kan ikke gjøre `navn[0] = 'J'` for å endre et tegn.
+
+// Søk etter posisjon av tegn
 console.log(navn.indexOf('J')); // 0
 console.log(navn.indexOf('å')); // -1 (ikke funnet)
 console.log(navn.toLowerCase()); // 'jo bjørnar'
 console.log(navn.toUpperCase()); // 'JO BJØRNAR'
-console.log(navn.length); // antall tegn, f.eks. 10
+console.log(navn.length); // antall tegn, 10
 console.log(navn.substring(0, 2)); // 'Jo' (fra indeks 0 til 2, ikke inkludert 2)
 
+// Boolean
 let over18 = true;
-```
 
-Merk: strings er immutable — du kan ikke gjøre `navn[0] = 'J'` for å endre et tegn.
+// Array
+let arrayTall = [10, 20, 30];
+console.log(arrayTall[1]); // 20
+console.log(arrayTall.length); // 3
+let arrayBilder = ["bilde1.jpg", "bilde2.jpg", "bilde3.jpg"];
+console.log(arrayBilder[0]); // 'bilde1.jpg'
+```
 
 ## Operatorer og regneoperasjoner
 
@@ -234,24 +246,27 @@ Noen nyttige funksjoner:
 
 - `Number.isInteger(x)` — sjekker om `x` er et heltall
 - `parseInt(str)` — konverterer en streng til heltall (stopper ved første ikke-siffer)
-- `parseFloat(str)` — konverterer en streng til flyttall
 - `parseInt(str, base)` — kan tolke strenger i forskjellige baser (f.eks. base 2 for binært, base 16 for heksadesimalt)
+- `parseFloat(str)` — konverterer en streng til flyttall
 - `Number(str)` — konverterer hele strengen til et tall eller `NaN` hvis ugyldig
 
 Eksempler:
 
 ```js
 let tall = 3.14;
-console.log('tall er eit heiltal: ' + Number.isInteger(tall)); // false
+console.log('tall er et heltal: ' + Number.isInteger(tall)); // false (3.14)
 tall = parseInt(tall);
-console.log('tall er eit heiltal: ' + Number.isInteger(tall)); // true (3)
+console.log('tall er et heltal: ' + Number.isInteger(tall)); // true (3)
 
 let bin = '1011';
-console.log(parseInt(bin, 2)); // 11
+console.log(parseInt(bin, 2)); // 11, fordi 8+0+2+1 = 11
 
 console.log(parseFloat('3.14')); // 3.14
 console.log(parseFloat('3. 14')); // 3 (stopp på mellomrom)
 
 console.log(Number('3.14')); // 3.14
-console.log(Number('abc')); // NaN
+console.log(Number('abc')); // NaN, klarer ikke konvertere
+
+let hex = 'F';
+console.log(parseInt(hex, 16)); // 15
 ```
