@@ -1,7 +1,7 @@
 # Ressurser for webutvikling
 Dette er et forsøk på å samle guider, oppgaver, løsningsforslag og eksempler for deg som forsøker å lære deg HTML, CSS og JS, samt databaser og SQL. Det er i tillegg en del materiale for Node JS og serversiden. Stadige endringer på gang.
 
-## Les guider til utvalgte konsept
+## Les **guider** til utvalgte konsept
 
 ### Javascript
 - Nybegynnerkurs i JS: [Les guide](./guider/introduksjonskurs-js/00-oversikt.md)
@@ -14,9 +14,9 @@ Dette er et forsøk på å samle guider, oppgaver, løsningsforslag og eksempler
 - Databaser og begreper. [Les guide](./guider/guide%20-%20begreper%20rundt%20databaser.md)
 - Spørringer, SQL (`S`tructured `Q`uery `L`anguage). [Les guide](./guider/guide%20-%20sql.md)
 
-## Se oppgaver (og noen løsningsforslag til disse) for:
+## Se **oppgaver** (og løsningsforslag til disse) for:
 - [HTML og CSS](./oppgaver/oppgaver%20-%20html%20og%20css.md)
-- [Javascript](./oppgaver/oppgaver%20-%20js.md) (du finner mest innhold her per nå)
+- [Javascript](./oppgaver/oppgaver%20-%20js.md)
 - [NodeJS](./oppgaver/oppgaver%20-%20nodejs.md)
 - [SQL](./oppgaver/oppgaver%20-%20sql.md)
 
