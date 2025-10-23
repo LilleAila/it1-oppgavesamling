@@ -45,7 +45,7 @@ I HTML-eksemplet over har vi et `<h1>`-element med id "header", en `<div>` med i
           - a
 ```
 
-JavaScript kan samhandle med DOM for å endre teksten i overskriften eller legge til innhold i `<div id="utskrift">`.
+JavaScript kan samhandle med DOM for å for eksempel kunne endre teksten i overskriften, eller legge til innhold i `<div id="utskrift">`.
 
 ```js
 let header = document.getElementById('header'); // finner element med id="header"
