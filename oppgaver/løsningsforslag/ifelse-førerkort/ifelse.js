@@ -1,5 +1,7 @@
+// Be om brukerens alder
 let alder = 8;
 
+// Sjekk alderen og gi passende melding
 if (alder < 16) {
     console.log("Ha deg vekk!");
 }
@@ -13,7 +15,7 @@ else if (alder >= 21) {
     console.log("Moped, bil og buss");
 }
 else {
-    console.log("En feil oppsto.")
+    console.log("Ugyldig alder.")
 }
 
-// NB: Lag et flytskjema
+// NB: Lag gjerne et flytskjema for mer komplekse if-else-strukturer!

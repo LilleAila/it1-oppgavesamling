@@ -133,6 +133,8 @@ Spør brukaren eit spørsmål. Dersom eit visst ord er inne i setningen så skri
 
 [Løysingsforslag](./løsningsforslag/includes/)
 
+Avansert versjon: Håndter at brukaren kan skrive «jeg liker ikke ski» eller lignende, og unngå å gi positiv tilbakemelding i slike tilfeller.
+
 ## 11. Eigenskapar om nettlesaren
 Lag fylgjande oppsummering på nettsida di. NB: Dynamisk. Det vil sei at tala for til dømes bredde, høgde og nettlesarversjon skal endre seg basert på enheten du sit på. Dette kan gjerast på meir eller mindre effektive måtar. Vurder ulike alternativ. 
 
@@ -144,6 +146,8 @@ Legg til fleire eigenskapar du kan hente ut om du ynskjer. Liste over anbefalte 
 -	Størrelse på skjerm (høgde, bredde)
 -	Lokasjon
 -	… kva meir kan du finne ut?
+
+[Løysingsforslag](../eksempel/js/matrix-terminal/)
 
 ## 12. Valgsetningar: Aldersgrense
 Lag ei aldersgrense på nettsida di. Spør brukaren kor gamal h*n er. Dersom over 18 kan du vise eit kattebilete pluss litt tekst, dersom ikkje skal du gje beskjed om at innhaldet dessverre er sperra (el.l.).
@@ -166,7 +170,7 @@ Kan du legge inn ei øvre aldersgrense òg? Kanskje som ein beskjed om at du må
 
 Det er anbefalt å teikne eit flytskjema for denne oppgåva.
 
-[Løysingsforslag](../eksempel/js/ifelse/)
+[Løysingsforslag](./løsningsforslag/ifelse-førerkort/)
 
 ## 14. ⭐ Gjettespel
 Før du begynner på oppgåva: Finn ut korleis du kan generere tilfeldige tal. Hint `Math.random()` hjå `MDN`. Her finn du meir generelle og brukandes hjelp enn det som står i boka.
