@@ -1,6 +1,8 @@
 # Oppgavesamling for JavaScript
 
-[Tilbake til samleside](../README.md)
+Lenke: [Tilbake til samleside for oppgaver](../README.md)
+
+Lenke: [Tilbake til JS-kurset](../guider/introduksjonskurs-js/00-oversikt.md)
 
 ## 1. Sjekkliste for viktige ting du skal kunne
 - [ ] Definere variabler, og bruke disse (`let` og `const`)
