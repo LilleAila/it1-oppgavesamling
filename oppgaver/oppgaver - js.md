@@ -131,7 +131,9 @@ Spør brukaren eit spørsmål. Dersom eit visst ord er inne i setningen så skri
 
 (Hint: `indexOf()` eller `includes()`. Bruk gjerne begge.)
 
-[Løysingsforslag](./løsningsforslag/includes/)
+[Løysingsforslag, enkelt](./løsningsforslag/nettlesareigenskap-og-includes/) NB: Denne kombinerer og løysinga til oppg. 11.
+
+[Løysingsforslag](./løsningsforslag/includes/) NB: Denne brukar forms/skjema.
 
 Avansert versjon: Håndter at brukaren kan skrive «jeg liker ikke ski» eller lignende, og unngå å gi positiv tilbakemelding i slike tilfeller.
 
@@ -147,7 +149,9 @@ Legg til fleire eigenskapar du kan hente ut om du ynskjer. Liste over anbefalte 
 -	Lokasjon
 -	… kva meir kan du finne ut?
 
-[Løysingsforslag](../eksempel/js/matrix-terminal/)
+[Løysingsforslag, enkelt](./løsningsforslag/nettlesareigenskap-og-includes/) NB: Denne kombinerer og løysinga til oppg. 10.
+
+[Løysingsforslag](../eksempel/js/matrix-terminal/) NB: Denne er meir avansert enn nødvendig, men du kan sjå korleis ein hentar ut eigenskapar om nettlesaren under 'info'.
 
 ## 12. Valgsetningar: Aldersgrense
 Lag ei aldersgrense på nettsida di. Spør brukaren kor gamal h*n er. Dersom over 18 kan du vise eit kattebilete pluss litt tekst, dersom ikkje skal du gje beskjed om at innhaldet dessverre er sperra (el.l.).
