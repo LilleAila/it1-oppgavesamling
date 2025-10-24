@@ -159,6 +159,7 @@ Lag ei aldersgrense på nettsida di. Spør brukaren kor gamal h*n er. Dersom ove
 Hint: 
 - `img src=""` er lovleg å bruke. Då vises ikkje eit bilete i heile tatt
 - Det er fleire måtar å gjere noko "usynleg" på, til dømes `visibility` og `display` (frå CSS)
+- Du kan gjere noko "blurry" vha. CSS (`filter: blur(5px)`), og styre dette vha. JS ved `...style.filter = blur(0px)`.
 - Du kan lukke ei fane (den aktive) frå JS i nokre nettlesarar, men dette vil ikkje alltid fungere
 - Du kan alltid "redirecte" til ei anna nettside
 
