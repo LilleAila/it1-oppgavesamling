@@ -192,6 +192,8 @@ Versjon 2: Avansert
 - Tell kor mange gonger brukaren har gjetta, eller sett ein begrensing på dette.
 - Legg til fleire krav om du vil.
 
+[Løysingsforslag](./løsningsforslag/gjettespel/)
+
 ## 15. Halloween, skrøymande god app (timing)
 Lag ei nettside som har som mål å skrøyme brukaren. Eksempelvis kan du laste inn ei nettside med behagelege fargar, musikk og generelt god stemning. Etter ei tilfeldig tid så kjem det ein høg lyd og eit skrøymande bilete (eller ein video) – samt andre endringar du ser kan vere spanande.
 
