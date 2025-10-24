@@ -163,6 +163,8 @@ Hint:
 - Du kan lukke ei fane (den aktive) frå JS i nokre nettlesarar, men dette vil ikkje alltid fungere
 - Du kan alltid "redirecte" til ei anna nettside
 
+[Løysingsforslag](./løsningsforslag/aldersgrense/)
+
 ## 13. ⭐ Valgsetningar: Førarkort
 Lag ein enkel app som kan hjelpe folk med å få vite kva setifikat dei kan ta. Du ber om alderen og presenterer deretter bileter og tekst som fortel kva dei kan ta sertifikat på (meir avansert om du vil: [Lovdata](https://lovdata.no/forskrift/2004-01-19-298/§3-1)):
 - Yngre enn 16. Ingenting, brukaren er for ung.
