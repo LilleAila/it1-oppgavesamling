@@ -211,6 +211,8 @@ Bruk løkker og variablar for å finne ut fylgjande (ikkje innebygde funksjonar 
 -	Finn det lågaste talet.
 -	…
 
+[Løysingsforslag](./løsningsforslag/tilfeldige-tall/)
+
 ## 17. ⭐ Arrays og funksjonar: Biletgalleri
 Lag eit enkelt biletgalleri vha. array. Meir konkret: Lagre bileta (navnet) i ein array og gjer det mogleg å bytte bilete ved å trykke på ein “neste-knapp”.
 Her er det heilt sikkert fristande å finne ein ferdigløysning på nett el.l. Eg anbefalar å lage ein særs enkel versjon basert på det me har lært så langt, for å forstå prinsippa skikkeleg.
