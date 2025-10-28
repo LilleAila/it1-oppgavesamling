@@ -1,0 +1,45 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body { 
+    /* Midtstiller hele innholdet både horisontalt og vertikalt */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 450px;
+    height: 250px;
+    border: 10px solid rgb(107, 149, 255);
+    background-color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 500px rgba(107, 149, 255, 0.9);
+}
+
+input {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border: 2px solid rgb(107, 149, 255);
+    border-radius: 5px;
+}
+
+button {
+    padding: 0.5rem 2rem;
+    font-size: 1.2rem;
+    background-color: rgb(107, 149, 255);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#utskrift {
+    background-color: rgb(219, 219, 255);
+    padding: 1rem;
+}

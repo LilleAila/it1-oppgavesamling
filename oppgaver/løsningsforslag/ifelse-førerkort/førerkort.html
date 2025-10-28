@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Førerkort</title>
+    <script src="førerkort.js" defer></script>
+    <link rel="stylesheet" href="førerkort.css">
+</head>
+<body>
+    <main>
+        <h1>Hvilket førerkort kan du ta?</h1>
+        <p>Skriv inn alderen din, og se hvilke køretøy du kan ta førerkort for.</p>
+        
+        <form id="skjema">
+            <label for="inpAlder">Alder:</label>
+            <input id="alder" type="number">
+            <button type="submit">Sjekk</button>
+        </form>
+
+        <p id="utskrift">
+            <!-- Fylles ut av JS -->
+             Resultatet kommer her.
+        </p>
+    </main>
+</body>
+</html>
