@@ -11,8 +11,11 @@ else if (alder < 18) {
 else if (alder < 21) {
     console.log("Moped og bil");
 }
-else if (alder >= 21) {
-    console.log("Moped, bil og buss");
+else if (alder < 24) {
+    console.log("Moped, bil og lastebil");
+}
+else if (alder >= 24 && alder < 120) { // Antar 120 som en øvre grense for gyldig alder
+    console.log("Moped, bil, lastebil og buss.");
 }
 else {
     console.log("Ugyldig alder.")
