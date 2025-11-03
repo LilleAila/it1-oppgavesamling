@@ -17,6 +17,9 @@ Dette er et forsøk på å samle guider, oppgaver, løsningsforslag og eksempler
 ### TypeScript
 - Introduksjon til TypeScript, med eksempler og oppgaver. [Les guide](./guider/guide%20-%20typescript.md)
 
+### Docker
+- Introduksjon til Docker, med eksempler og oppgaver. [Les guide](./guider/guide%20-%20docker.md)
+
 ## Se **oppgaver** (og løsningsforslag til disse) for:
 - [HTML og CSS](./oppgaver/oppgaver%20-%20html%20og%20css.md)
 - [Javascript](./oppgaver/oppgaver%20-%20js.md)
