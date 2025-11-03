@@ -14,6 +14,9 @@ Dette er et forsøk på å samle guider, oppgaver, løsningsforslag og eksempler
 - Databaser og begreper. [Les guide](./guider/guide%20-%20begreper%20rundt%20databaser.md)
 - Spørringer, SQL (`S`tructured `Q`uery `L`anguage). [Les guide](./guider/guide%20-%20sql.md)
 
+### TypeScript
+- Introduksjon til TypeScript, med eksempler og oppgaver. [Les guide](./guider/guide%20-%20typescript.md)
+
 ## Se **oppgaver** (og løsningsforslag til disse) for:
 - [HTML og CSS](./oppgaver/oppgaver%20-%20html%20og%20css.md)
 - [Javascript](./oppgaver/oppgaver%20-%20js.md)
