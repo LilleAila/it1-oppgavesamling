@@ -52,9 +52,22 @@ let header = document.getElementById('header'); // finner element med id="header
 header.innerText = "Ny overskrift!"; // endrer teksten i elementet
 ```
 
-I tillegg til document.getElementById, finnes det flere måter å velge elementer i DOM på, som `document.getElementsByClassName`, `document.getElementsByTagName`, og de mer moderne `document.querySelector` og `document.querySelectorAll`. Det anbefales å bruke `querySelector` og `querySelectorAll` for både en mer fleksibel og 'kraftfull' seleksjon av elementer.
+I tillegg til `document.getElementById`, finnes det flere måter å velge elementer i DOM på, som
+- `document.getElementsByClassName`, 
+- `document.getElementsByTagName`,
+- `document.querySelector` og 
+- `document.querySelectorAll`. 
 
-Et eksempel på bruk av querySelector er `document.querySelector('#utskrift')` som finner elementet med id "utskrift". Et mer avansert eksempel på en selector er `document.querySelector('nav ul li a')`, som finner det første `<a>`-elementet inne i en `<li>`, som er inne i en `<ul>`, som er inne i en `<nav>`.
+Det anbefales å bruke `querySelector` og `querySelectorAll` for en mer fleksibel seleksjon av elementer.
+
+Eksempelet over kan skrives om til å bruke `querySelector` slik (husk at id-selektorer bruker `#` foran id-navnet i CSS-selector-syntaks):
+
+```js
+let header = document.querySelector('#header'); // finner element med id="header"
+header.innerText = "Ny overskrift!";
+```
+
+Et mer avansert eksempel på en selector er `document.querySelector('nav ul li a')`, som finner det første `<a>`-elementet inne i en `<li>`, som er inne i en `<ul>`, som er inne i en `<nav>`.
 
 Du kan også finne alle elementer som matcher en selector med `document.querySelectorAll('.klasseNavn')`, som returnerer en liste av alle elementer med klassen "klasseNavn". Et eksempel på dette:
 
@@ -74,6 +87,8 @@ I JavaScript bruker vi vanligvis `let` og `const` for å erklære variabler:
 - `const` — for konstanter (verdi som ikke endres). Bruk når verdien ikke skal settes om.
 - `let` — for variabler som kan endres senere.
 
+I noen gamle eksempler kan du finne `var`, men denne har flere uheldige egenskaper og bør unngås i ny kode. 
+
 Eksempel:
 
 ```js
@@ -86,11 +101,13 @@ Tips om navngivning: bruk camelCase (f.eks. `antallBarn`, `minVariabel`) og besk
 
 ## Utskrift / logging
 
-Unngå `document.write()` i moderne kode — det er lite fleksibelt og kan overskrive siden. Bruk heller:
+Når du jobber med variabler og data i JavaScript, er det ofte nyttig å skrive ut informasjon for å se hva som skjer. Her er noen vanlige metoder for utskrift:
 
 - `console.log(...)` for utviklerlogg i konsollen, med flere varianter som `console.error()`, `console.warn()`, og `console.table()`.
 - `document.getElementById('id').innerText`, eller `.textContent` for å vise tekst i DOM. Eventuelt `innerHTML` for HTML-innhold.
 - `document.querySelector('nav').innerText` som et kraftigere alternativ til `getElementById`.
+
+NB: Unngå `document.write()` i moderne kode — det er lite fleksibelt og kan overskrive siden.
 
 Eksempel:
 
@@ -124,18 +141,21 @@ Eksempler:
 // String, og noen string-metoder
 let navn = "Jo Bjørnar";
 console.log(navn[0]); // 'J'
+console.log(navn[3]); // ' '
 // Merk: strings er immutable — du kan ikke gjøre `navn[0] = 'J'` for å endre et tegn.
 
 // Søk etter posisjon av tegn
 console.log(navn.indexOf('J')); // 0
 console.log(navn.indexOf('å')); // -1 (ikke funnet)
+// Manipulasjon av tekst
 console.log(navn.toLowerCase()); // 'jo bjørnar'
 console.log(navn.toUpperCase()); // 'JO BJØRNAR'
+
 console.log(navn.length); // antall tegn, 10
 console.log(navn.substring(0, 2)); // 'Jo' (fra indeks 0 til 2, ikke inkludert 2)
 
 // Boolean
-let over18 = true;
+let over18 = true; // eller false
 
 // Array
 let arrayTall = [10, 20, 30];
@@ -212,6 +232,13 @@ let rest2 = 8 % 3; // 2
 ```
 
 Brukes ofte for å sjekke om et tall er partall/oddetall (`n % 2 === 0` betyr partall).
+
+Et annet bruksområde er å "rulle over" verdier innenfor et intervall, f.eks. for å holde en verdi innenfor 0-359 grader i en sirkel:
+
+```js
+let vinkel = 370;
+vinkel = vinkel % 360; // 10
+```
 
 ## typeof
 
