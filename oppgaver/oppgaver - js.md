@@ -217,6 +217,8 @@ Bruk løkker og variablar for å finne ut fylgjande (ikkje innebygde funksjonar 
 Lag eit enkelt biletgalleri vha. array. Meir konkret: Lagre bileta (navnet) i ein array og gjer det mogleg å bytte bilete ved å trykke på ein “neste-knapp”.
 Her er det heilt sikkert fristande å finne ein ferdigløysning på nett el.l. Eg anbefalar å lage ein særs enkel versjon basert på det me har lært så langt, for å forstå prinsippa skikkeleg.
 
+[Løysingsforslag](./løsningsforslag/bildegalleri/)
+
 ## 18. Terningspel
 Ta utgangspunkt i 2 terningar, eller fleire. Når sida lastast på nytt, eller når ein trykker på ein knapp, skal terningane få kvar sin verdi mellom 1-6. Skriv ut kva desse er. Deretter kan du til dømes sjekke om alle er like, om dei totalt overstig ein viss sum osv. Gje deg sjølv nokre utfordringar her (også med å vise fram bileter, om du vil). 
 
