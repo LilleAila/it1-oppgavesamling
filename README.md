@@ -6,6 +6,7 @@ Dette er et forsøk på å samle guider, oppgaver, løsningsforslag og eksempler
 ### Javascript
 - Nybegynnerkurs i JS: [Les guide](./guider/introduksjonskurs-js/00-oversikt.md)
 - Node JS og eksempelprosjektet **chatteapp**. [Les guide](./guider/guide%20-%20nodejs%20prosjekt.md)
+- Node JS med innlogging, sessions og middleware. Eksempelprosjekt om **biler**. [Les guide](./guider/guide%20-%20session%20og%20middleware.md)
 
 ### Github
 - Hvordan sette opp GitHub, lage din egen nettside og publisere den slik at du (og andre) kan besøke den fra mobil, PC eller dele med venner! [Les guide](./guider/guide%20-%20github%20og%20github%20desktop.md)

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mine Biler</title>
+    <link rel="stylesheet" href="../css/styles.css"> <!-- Legg til en CSS-fil om ønskelig -->
+</head>
+<body>
+    <h1>Mine biler</h1>
+    <table id="bilerTabell" border="1">
+        <thead>
+            <tr>
+                <th>Registreringsnummer</th>
+                <th>Merke</th>
+                <th>Modell</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Bilene vil bli lagt til her via JavaScript -->
+        </tbody>
+    </table>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            const tabellBody = document.querySelector("#bilerTabell tbody");
+
+            try {
+                // Hent bilane frå server
+                const response = await fetch("/minebiler");
+                if (!response.ok) {
+                    throw new Error("Kunne ikke hente bilene. Er du logget inn?");
+                }
+
+                const biler = await response.json();
+
+                // Legg til bilene i tabellen
+                biler.forEach(bil => {
+                    const rad = document.createElement("tr");
+
+                    const regNrCell = document.createElement("td");
+                    regNrCell.textContent = bil.registreringsnummer;
+                    rad.appendChild(regNrCell);
+
+                    const merkeCell = document.createElement("td");
+                    merkeCell.textContent = bil.merke;
+                    rad.appendChild(merkeCell);
+
+                    const modellCell = document.createElement("td");
+                    modellCell.textContent = bil.modell;
+                    rad.appendChild(modellCell);
+
+                    tabellBody.appendChild(rad);
+                });
+            } catch (error) {
+                console.error("Feil:", error);
+                tabellBody.innerHTML = `<tr><td colspan="3">Kunne ikke laste bilene: ${error.message}</td></tr>`;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test: Legg til bil</title>
+    <script>
+        // Hent innlogget bruker fra session og vis i UI
+        window.addEventListener("DOMContentLoaded", async () => {
+            try {
+                const res = await fetch("/me");
+                if (!res.ok) throw new Error("Kunne ikke hente bruker");
+                const bruker = await res.json();
+                document.getElementById("brukerNavn").innerText = bruker.fornavn;
+                document.getElementById("personnummer").value = bruker.id; // vises som readonly
+            } catch (e) {
+                console.error(e);
+                alert("Feil ved henting av brukerdata. Logg evt. inn på nytt.");
+                location.href = "/login.html";
+            }
+        });
+
+        async function leggTilBil(event) {
+            event.preventDefault(); // Forhindre standard form-innsending
+
+            const registreringsnummer = document.getElementById("registreringsnummer").value;
+            const merke = document.getElementById("merke").value;
+            const modell = document.getElementById("modell").value;
+            const personnummer = document.getElementById("personnummer").value;
+
+            const response = await fetch("/leggtilbil", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    registreringsnummer,
+                    merke,
+                    modell,
+                    personnummer
+                })
+            });
+
+            const result = await response.json();
+            alert(result.message);
+        }
+    </script>
+</head>
+<body>
+    <h1>Legg til bil</h1>
+
+    <p>Innlogget som: <strong id="brukerNavn"></strong></p>
+
+    <form onsubmit="leggTilBil(event)">
+        <label for="registreringsnummer">Registreringsnummer:</label>
+        <input type="text" id="registreringsnummer" name="registreringsnummer" required><br>
+
+        <label for="merke">Merke:</label>
+        <input type="text" id="merke" name="merke" required><br>
+
+        <label for="modell">Modell:</label>
+        <input type="text" id="modell" name="modell" required><br>
+
+        <!-- Kun for visning; server henter uansett fra session -->
+        <label for="personnummer">Personnummer (automatisk):</label>
+        <input style="background-color: lightgray;" type="text" id="personnummer" readonly><br>
+
+        <button type="submit">Legg til bil</button>
+    </form>
+</body>
+</html>
