@@ -29,9 +29,17 @@ Velg ett av følgende tema for ditt prosjekt:
 - Bruk av beste praksis i Node.js og Express.js.
 - Evnen til å feilsøke og løse problemer som oppstår under utviklingen.
 - Kreativitet og originalitet i prosjektet.
+- Grensesnittet er brukervennlig, og tilfredsstiller kravene til universell utforming.
 
 Vurderingen har en munnlig-praktisk form, der du presenterer prosjektet ditt og forklarer valg du har gjort under utviklingen, samt legger til endringer basert på tilbakemeldinger.
 
 ## Bonuspoeng
 
 Du hjelper andre elever i timene, enten ved å svare på spørsmål, gi tilbakemeldinger på kode eller bidra til andres prosjekter.
+
+## Delmål, innleveringer
+
+1. **Uke 1**: Database ferdig
+2. **Uke 2**: GUI ferdig
+3. **Uke 3**: API mot databasen ferdig (ruter)
+4. ..
