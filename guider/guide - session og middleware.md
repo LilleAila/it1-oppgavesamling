@@ -131,6 +131,10 @@ For brukeren så er det selve nettsiden som er det synlige innholdet, men som du
 
 ### Sessions og middleware
 
+Sessions lar oss lagre informasjon om brukeren mellom ulike HTTP-forespørsler, slik at vi kan vite om brukeren er logget inn eller ikke.
+
+Middleware er funksjoner som kjører mellom forespørselen og svaret i Express. Vi kan bruke middleware til å sjekke om en bruker er logget inn før vi gir tilgang til visse sider.
+
 For å bruke sessions, må vi sette opp en session-middleware i Express-appen vår. Dette gjøres slik:
 
 ```js
