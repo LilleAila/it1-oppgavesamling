@@ -8,7 +8,7 @@ Løs disse oppgavene mest mulig uten hjelpemidler, med unntak av de "cheat sheet
 
 ![oppgave01](./images/oppgave01.png)
 
-Over ser du en input form som er midtstilt på nettsiden. Skriv HTML og CSS for å gjenskape formen til høyre. Husk "luft" mellom elementene. 
+Over ser du en input form som er midtstilt på nettsiden. Skriv HTML og CSS for å gjenskape formen (skjemaet). Husk "luft" mellom elementene. 
 
 Farger som er brukt er lightgreen, blue og white.
 

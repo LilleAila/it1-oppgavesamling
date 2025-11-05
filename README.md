@@ -27,6 +27,12 @@ Dette er et forsøk på å samle guider, oppgaver, løsningsforslag og eksempler
 - [NodeJS](./oppgaver/oppgaver%20-%20nodejs.md)
 - [SQL](./oppgaver/oppgaver%20-%20sql.md)
 
+## Samling med vurderinger:
+
+Her har vi samlet en del eksempler på prøver, vurderinger og eksamensoppgaver innen HTML, CSS, JS og SQL.
+
+[Prøver, vurderinger og eksamensoppgaver i HTML, CSS, JS og SQL](./vurdering/))
+
 ## Design og prototyping av nettsider (og mer):
 Det å planlegge hvordan nettsidene skal se ut kan gjøre arbeidet mye enklere når du skal skrive CSS-koden, da du blant annet vet hvordan du kan dele designet opp i "bokser", og plassere disse.
 - Figma er et mye brukt program i bransjen, [praktisk guide: Figma 101](https://designlab.com/figma-101-course/introduction-to-figma)
