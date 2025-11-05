@@ -136,8 +136,9 @@ Bruk typar og det du har lært om i kursmaterialet for å bygge ein robust TS-ap
 
 ### Oppgåve 2 – Etterlikning av henting frå database
 
-1. Definer ein «regel» i deloppgåve 1, og bruk denne i alle påhøyrande deloppgåver.
-2. Definer eit interface (eller type) for ein brukar, med felta:
+Definer ein «regel» i deloppgåve 1, og bruk denne i alle påhøyrande deloppgåver.
+
+1. Definer eit interface (eller type) for ein brukar, med felta:
    a. id
    b. namn
    c. epost
