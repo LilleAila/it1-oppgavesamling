@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });
 
-// Eksempel på en rute
+// Eksempel på en rute som henter alle meldingene (og hvem som har skrevet disse, samt tidspunkt)
 app.get('/hentMeldinger', (req, res) => {
     const rows = db.prepare('SELECT id, person, melding, tid FROM melding ORDER BY id ASC').all();
     res.json(rows);
