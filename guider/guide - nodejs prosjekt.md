@@ -13,10 +13,12 @@ Navigasjon:
 - [Eventuelle fremtidige steg](#eventuelle-fremtidige-steg)
 
 ## Steg 1: Planlegg appen
+
 Dette kan være så mangt, men det kan være smart å se på hvilken teknologi du ønsker å bruke, i tillegg til
 både designet av appen og hva den skal gjøre, samt hvordan du skal lagre data i en database.
 
 ### Teknologi:
+
 Her er det mye du kan tenke på, men ofte blir teknologien valgt for deg i de ulike prosjektene du jobber med.
 
 Som nå, da vi skal bruke følgende "stack":
@@ -27,24 +29,29 @@ Som nå, da vi skal bruke følgende "stack":
 Husk igjen at vi i dette prosjektet gjør ting så enkelt som mulig (i første omgang).
 
 ### Design:
+
 Todelt GUI, et område for å vise meldinger, og et annet for å skrive inn nye meldinger.
 
 <img src="../bilder/chatteapp-gui.png" width="400" alt="GUI for chatteapp">
 
 ### Datamodell og database:
+
 Vi forenkler veldig, og lager en datamodell som viser hva vi ønsker å ha med. Vi må som sagt også bestemme hvilken database vi ønsker å bruke. En av de enkleste å komme i gang med er SQLite.
 
 #### Datamodell:
 
 ![datamodell-chatte-app](../bilder/er-modell-chatapp-enkel.png)
 
-At tid er TEXT kan oppleves rart, men det kommer an på hvordan SQLite fungerer. Her er noen tips om hvordan dette kan bli løst:
+At tid er `TEXT` kan oppleves rart, men det kommer an på hvordan SQLite fungerer. Her er noen tips om hvordan dette kan bli løst:
 - Standard tidskodeformat: `YYYY-MM-DD HH:MM:SS`
 - I Javascript/SQL kan vi nå for eksempel bruke: 
 ```sql
 const stmt = db.prepare('INSERT INTO melding (tekst, created_at) VALUES (?, ?)');
 stmt.run('Hei verden!', new Date().toISOString());
 ```
+
+NB: I vår relle database bruker vi ikke de samme navnene (tekst, created_at), dette er kun for å illustrere.
+
 #### Database
 
 Opprett databasen, eksempelvis i SQLiteStudio, og legg inn noen testdata.
@@ -60,6 +67,7 @@ FROM melding;
 ```
 
 ## Steg 2: Sett opp prosjektet
+
 Sjekk at Node JS er installert. Skriv følgende i terminalen:
 ```
 node -v
@@ -94,12 +102,12 @@ const app = express();
 const Database = require('better-sqlite3');
 const db = new Database('chat.db');
 
-// Eksempel på en rute, som ikke sender korrekt HTML
+// Eksempel på en rute, NB! ..som ikke sender korrekt HTML
 app.get('/', (req, res) => {
     res.send("Hei!");
 });
 
-// Eksempel på en rute som sjekker om databasen fungerer
+// Eksempel på en rute som sjekker om databasen fungerer, returnerer alle meldinger i JSON-format
 app.get('/hentMeldinger', (req, res) => {
     const row = db.prepare('SELECT * FROM melding').all();
     res.json(row);
@@ -120,7 +128,8 @@ Nå kontrollerer du om serveren fungerer ved å gå til nettleseren din og besø
 - http://localhost:3000/hentMeldinger 
     - Forventet resultat: en JSON-fil med data fra databasen. Kjenner du igjen data som ligger der?
 
-Feilene som eventuelt dukker opp på punktene over, handler som oftest om at du har brukt andre navn inne i databasen. 
+Feilene som eventuelt dukker opp på punktene over, handler som oftest om at du har brukt andre navn inne i databasen.
+
 Få begge rutene til å fungere før du går videre.
 
 ## Steg 4: Legge til en nettside som kan vise innhold fra databasen
@@ -176,6 +185,7 @@ app.listen(3000, () => {
     console.log('Server kjører på http://localhost:3000');
 });
 ```
+
 ### public-mappen, og tilhørende HTML, CSS og JS
 
 Nå må du med andre ord opprette en mappe i prosjektet ditt, som du kaller `public`. 
@@ -215,6 +225,11 @@ Inne i denne mappen oppretter du en HTML-side, `index.html`.
 </body>
 </html>
 ```
+
+Her er det viktig å legge merke til at vi bruker `fetch` for å hente data fra serveren, og at vi
+bruker `await` for å vente på at dataene skal komme tilbake før vi prøver å bruke dem. For å kunne bruke
+`await`, må funksjonen vi er i, være deklarert som `async`.
+
 ### Sjekkpunkt!
 
 Nå kontrollerer du om serveren fungerer ved å gå til nettleseren din og besøke følgende adresse:
@@ -238,7 +253,7 @@ for (let melding of meldinger) {
 ## Steg 5: Skrive data til databasen, fra nettsiden
 
 Vi lager nå en `form` (et skjema) i HTML, som vi bruker for å kunne skrive hvem vi er, og hvilken melding
-vi ønsker å dele. Id for meldingene i databasen er autogenerert, så vi trenger ikke å sende dette inn. Tiden
+vi ønsker å dele. `Id` for meldingene i databasen er autogenerert, så vi trenger ikke å sende dette inn. Tiden
 vi sender inn, kan vi generere i Javascript-koden senere (enten på klientsiden eller serversiden).
 
 HTML-koden for skjemaet kan gjøres slik:
@@ -334,6 +349,7 @@ Nå kontrollerer du om chatteappen fungerer ved å gå til nettleseren din og be
 [Se fullstendig kode](../eksempel/nodejs/chat-klasserom/)
 
 ## Eventuelle fremtidige steg
+
 Dette er et veldig enkelt eksempel på en chatteapp, og det er mange ting som kan gjøres for å forbedre den. Her er noen forslag:
 - Auto-oppdatering med SSE/WebSocket, eventuelt forenklet vha. setInterval
 - Enklere moderering (maks lengde, banning-filter, osv.)
