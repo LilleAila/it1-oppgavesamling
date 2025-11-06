@@ -29,6 +29,8 @@ Husk igjen at vi i dette prosjektet gjør ting så enkelt som mulig (i første o
 ### Design:
 Todelt GUI, et område for å vise meldinger, og et annet for å skrive inn nye meldinger.
 
+<img src="../bilder/chatteapp-gui.png" width="400" alt="GUI for chatteapp">
+
 ### Datamodell og database:
 Vi forenkler veldig, og lager en datamodell som viser hva vi ønsker å ha med. Vi må som sagt også bestemme hvilken database vi ønsker å bruke. En av de enkleste å komme i gang med er SQLite.
 
