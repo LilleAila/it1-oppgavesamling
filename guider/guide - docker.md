@@ -2,6 +2,13 @@
 
 Docker lar oss pakke applikasjoner og deres avhengigheter i containere, noe som gjør det enklere å distribuere og kjøre dem på forskjellige miljøer uten å bekymre oss for kompatibilitetsproblemer.
 
+Innhold:
+- [Installere Docker](#installere-docker)
+- [Grunnleggende Docker-kommandoer](#grunnleggende-docker-kommandoer)
+- [Eksempel på bruk for en Node JS-applikasjon](#eksempel-på-bruk-for-en-node-js-applikasjon)
+- [Eksempel: Kjøre en enkel webserver med Docker](#eksempel-kjøre-en-enkel-webserver-med-docker)
+- [Oppgave](#oppgave)
+
 ## Installere Docker
 
 Vi anbefaler Docker Desktop for å bedre holde oversikt over dine containere og bilder, i alle fall i første omgang.
@@ -83,4 +90,39 @@ docker ps -a # Finn container-IDen
 docker stop <container_id>
 docker rm <container_id>
 docker rmi min-docker-webserver
+```
+
+## Oppgave
+
+Lag en `Dockerfile` for [chatteappen](../eksempel/nodejs/chat-klasserom/) vi jobbet med tidligere i kurset, bygg bildet og kjør det i en container. Test at applikasjonen fungerer som forventet.
+
+Løsningsforslag, som kan kreve noen justeringer basert på dine potensielle endringer i applikasjonen:
+
+```Dockerfile
+# Bruk en offisiell Node.js-bilde som base
+FROM node:alpine
+
+# Sett arbeidskatalogen i containeren
+WORKDIR /app
+
+# Kopier package.json og package-lock.json
+COPY package*.json ./
+
+# Installer avhengigheter
+RUN npm install
+
+# Kopier resten av applikasjonskoden
+COPY . .
+
+# Start applikasjonen
+CMD ["npm", "start"]
+
+# Eksponer porten applikasjonen kjører på
+EXPOSE 3000
+```
+
+Bygg bildet (stå i katalogen hvor Dockerfile ligger):
+
+```bash
+docker build -t chat-app .
 ```
