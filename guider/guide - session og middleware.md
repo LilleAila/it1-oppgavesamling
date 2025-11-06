@@ -1,5 +1,14 @@
 # Sessions og middleware
 
+Sikkerhet er viktig i webapplikasjoner, spesielt når det gjelder håndtering av brukere og deres data. Tre viktige konsepter som vi skal se på for å oppnå dette er **passord og kryptering**, **sessions** og **middleware**.
+
+Oversikten for denne guiden er som følger:
+- [Eksempelprosjekt](#eksempelprosjekt)
+- [Viktige punkter fra eksempelprosjektet](#viktige-punkter-fra-eksempelprosjektet)
+  - [Nødvendige pakker](#nødvendige-pakker)
+  - [Passord-hashing med bcrypt](#passord-hashing-med-bcrypt)
+  - [Sessions og middleware](#sessions-og-middleware-1)
+  
 ## Eksempelprosjekt
 
 Vi tar utgangspunkt i en app som håndterer brukere og bilene deres.
