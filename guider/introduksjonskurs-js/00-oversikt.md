@@ -24,6 +24,10 @@ Les [arrays og objekter](04_arrays_og_objekter.md), for detaljer om blant annet 
 
 Les [lyttefunksjoner og hendelseshåndtering](05_lyttefunksjoner_og_hendelseshandtering.md), for detaljer om blant annet hvordan man legger til hendelseslyttere på HTML-elementer, og hvordan man håndterer brukerinteraksjoner som klikk og tastetrykk.
 
+## Skjemaer og input-håndtering
+
+Les [skjemaer og input-håndtering](06_forms.md), for detaljer om blant annet hvordan man oppretter og håndterer HTML-skjemaer (forms), validering av brukerinput, og hvordan man henter ut data fra skjemaer ved hjelp av JavaScript.
+
 ## Mer innhold kommer!
 
 ..etter hvert.
