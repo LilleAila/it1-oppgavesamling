@@ -21,6 +21,9 @@ Dette er et forsøk på å samle guider, oppgaver, løsningsforslag og eksempler
 ### Docker
 - Introduksjon til Docker, med eksempler og oppgaver. [Les guide](./guider/guide%20-%20docker.md)
 
+### Pico React
+- Introduksjon til Pico React, et lettvekts React-bibliotek. [Les guide](./guider/guide%20-%20pico%20react.md)
+
 ## ✅ Se **oppgaver** (og løsningsforslag til disse) for:
 - [HTML og CSS](./oppgaver/oppgaver%20-%20html%20og%20css.md)
 - [Javascript](./oppgaver/oppgaver%20-%20js.md)
