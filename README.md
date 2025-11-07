@@ -3,6 +3,9 @@ Dette er et forsøk på å samle guider, oppgaver, løsningsforslag og eksempler
 
 ## 📖 Les **guider** til utvalgte konsepter
 
+### CSS
+- Grunnleggende CSS, med noen nyttige eksempler: [Les guide](./guider/guide%20-%20css.md)
+
 ### Javascript
 - Nybegynnerkurs i JS: [Les guide](./guider/introduksjonskurs-js/00-oversikt.md)
 - Node JS og eksempelprosjektet **chatteapp**. [Les guide](./guider/guide%20-%20nodejs%20prosjekt.md)
