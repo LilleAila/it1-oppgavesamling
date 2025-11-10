@@ -17,6 +17,7 @@ Velg ett av følgende tema for ditt prosjekt:
     - Du skal lage en database-modell som passer til ditt prosjekt. Databasen må typisk inneholde minst tre tabeller med relasjoner mellom dem.
 - Prosjektet skal ha ruter som håndterer GET-forespørsler og som håndterer POST-forespørsler (lese og skrive data).
 - Prosjektet skal ha en frontend som kommuniserer med backend via API-kall (ruter). Frontend skal ta hensyn til universell utforming, og i utgangspunktet bruke vanlig HTML og CSS.
+- Koden skal til en hver tid ligge oppdatert i et Git-repositorium (GitHub), der du bruker meningsfulle commit-meldinger.
 
 ### Ekstra krav opp mot faget brukerstøtte
 
