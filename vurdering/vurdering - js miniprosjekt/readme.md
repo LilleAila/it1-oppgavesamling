@@ -4,6 +4,8 @@
 
 Du skal lage en valgfri JavaScript-applikasjon over en periode på 6 timer (3 økter). Se [ideer til prosjekter](#prosjektideer).
 
+Arbeidet med prosjektet skal til en hver tid være oppdatert og synlig i en GitHub-repo, med meningsfulle commit-meldinger underveis.
+
 Krav til applikasjonen:
 - HTML og CSS for å strukturere og style applikasjonen
 - JavaScript for å implementere funksjonalitet
