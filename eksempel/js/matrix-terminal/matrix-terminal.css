@@ -14,6 +14,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    position: relative;
+}
+
+/* Matrix bakgrunn */
+#matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.3; /* Gjer bakgrunnen litt gjennomsiktig så terminalen er lesbar */
 }
 
 #terminal {
@@ -25,21 +38,22 @@ body {
     justify-content: flex-start;
     align-items: stretch;
     overflow: hidden;
+
+    position: relative;
+    z-index: 1; /* Terminal over bakgrunnen */
 }
 
 #tekstboks {
     width: 90%;
     height: 300px;
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.8); /* Litt gjennomsiktig */
     color: #00ff00;
     font-size: 1rem;
-    /* font-family: 'Courier New', Courier, monospace; */
-    /* border: none; */
     border: 1px solid #00ff00;
     outline: none;
     padding: 10px;
     overflow-y: auto;
-    resize: none; /* Prevent resizing */
+    resize: none;
 }
 
 input[type="text"] {
@@ -47,7 +61,7 @@ input[type="text"] {
     padding: 10px;
     border: none;
     border-bottom: 1px solid #00ff00;
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.8);
     color: #00ff00;
     font-size: 1.5rem;
     font-family: 'Courier New', Courier, monospace;
