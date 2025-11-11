@@ -2,6 +2,14 @@
 
 CSS brukes for å style HTML-elementer på en nettside. Med CSS kan du kontrollere layout, farger, skrifttyper, avstander og mye mer.
 
+Du finner mange bedre guider til dette temaet på nettet, og noen gode ressurser inkluderer:
+- [MDN Web Docs - CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [W3Schools - CSS Tutorial](https://www.w3schools.com/css/)
+- [CSS-Tricks](https://css-tricks.com/)
+- [Kevin Powell - YouTube Channel](https://www.youtube.com/kepowob) (sterkt anbefalt!)
+
+Du kan også [se noen av eksemplene vi går gjennom i fellesskap i timene hos oss](../eksempel/css/).
+
 Innhold:
 - [Grunnleggende syntaks](#grunnleggende-syntaks)
 - [Konkrete, nyttige eksempler](#konkrete-nyttige-eksempler)
