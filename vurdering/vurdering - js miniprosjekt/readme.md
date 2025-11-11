@@ -19,7 +19,7 @@ Krav til applikasjonen:
 
 Etter at du er ferdig å utvikle applikasjonen, skal du delta på en fagsamtale, der du forklarer, viser, gjør små endringer og legger til funksjonalitet i applikasjonen din.
 
-Kort fortalt skal du vise eierskap og forståelse for koden du har jobbet med, og at det ikke bare er AI-generert kode du har limt inn uten å forstå hva den gjør. Videre skal du kunne grunnleggende programmeringskonsepter som variabler, valgsetninger, funksjoner, løkker, arrays (og objekter), og hvordan JavaScript samhandler med HTML og CSS.
+Kort fortalt skal du vise eierskap og forståelse for koden du har jobbet med, og at det ikke bare er AI-generert kode du har limt inn uten å forstå hva den gjør. Du skal vise at du kan grunnleggende programmeringskonsepter fra kravene, og hvordan JavaScript samhandler med HTML og CSS.
 
 **Tips**: Lag heller et litt mer grunnleggende prosjekt du forstår godt, enn et avansert prosjekt du ikke forstår.
 
