@@ -41,3 +41,5 @@ Har du drømt om å lage noe spennende, så kan dette være en fin anledning! Pr
 - `Lotto-tall generator` som genererer et sett med tilfeldige tall for brukeren. Brukeren kan legge inn ulike tallrekker, og disse kan sammenlignes med de genererte tallene for å se om det er noen treff.
 - `Tegneapp`, i retrostil, som lar deg tegne på et lerret bestående av piksler, ved hjelp av musen eller touch-input. Du kan legge til funksjoner som fargevalg. ([Eksempel](../../eksempel/js/piksel-eksperiment/))
 - `Matrix-terminal`, med fallende grønne tegn, og mulighet for å skrive egne meldinger som vises i terminalen. ([Eksempel](../../eksempel/js/matrix-terminal/))
+
+Du kan også ta utgangspunkt i noen av oppgavene fra [oppgavesamlingen i kurset](../../oppgaver/oppgaver%20-%20js.md), og bygge videre på disse.
