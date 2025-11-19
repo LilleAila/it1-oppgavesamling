@@ -1,0 +1,35 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#spelsamling {
+    --min-col-size: 300px;
+
+    display: grid;
+    gap: 1rem;
+
+    grid-template-columns: 
+        repeat(auto-fit, minmax(min(var(--min-col-size), 100%), 1fr));
+        /* Kevin Powell: https://www.youtube.com/watch?v=OZ6qKoq7RJU */
+
+    margin: 1rem;
+}
+
+.spel {
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+    background-color: #fafafa;
+
+}
+
+.spel img {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem auto;
+    border-radius: 4px;
+}
