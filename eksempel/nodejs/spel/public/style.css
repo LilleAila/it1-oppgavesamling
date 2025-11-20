@@ -4,6 +4,11 @@ html, body {
     height: 100%;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #bbbbbb;
+}
+
 #spelsamling {
     --min-col-size: 300px;
 
@@ -32,4 +37,12 @@ html, body {
     display: block;
     margin: 0 auto 1rem auto;
     border-radius: 4px;
+}
+
+#spel-container {
+    margin: 1rem;
+    border: 1px solid #ccc;
+    width: fit-content;
+    padding: 1rem;
+    background-color: white;
 }

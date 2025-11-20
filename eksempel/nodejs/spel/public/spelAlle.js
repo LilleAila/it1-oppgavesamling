@@ -24,10 +24,10 @@ async function visSpel() {
         pBeskrivelse.textContent = spel.beskrivelse;
         spelDiv.appendChild(pBeskrivelse);
 
-        // Opprett bilde (hvis det finnes)
+        // Opprett bilde (hvis det finnes), og en lenke rundt dette
         if (spel.bilde) {
             const link = document.createElement('a');
-            link.href = `spel.html?id=${spel.id}`;
+            link.href = `spel-detalj.html?id=${spel.id}`;
             
             const img = document.createElement('img');
             img.src = "/bileter/" + spel.bilde;

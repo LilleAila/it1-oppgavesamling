@@ -40,9 +40,9 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-// Standard rute for å hente index.html AKA startsiden
+// Standard rute for å sende spelAlle.html AKA startsiden
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/index.html');
+    res.sendFile(__dirname + '/public/spelAlle.html');
 });
 
 // Eksempel på en rute som henter alle meldingene (og hvem som har skrevet disse, samt tidspunkt)
