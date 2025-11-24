@@ -63,6 +63,18 @@ app.get('/spel/:id', (req, res) => {
     res.json(row);
 });
 
+// Rute for å slette et spill
+app.delete('/spel/:id', (req, res) => {
+    const id = req.params.id;
+    const result = db.prepare('DELETE FROM spel WHERE id = ?').run(id);
+    
+    if (result.changes === 0) {
+        return res.status(404).json({ error: 'Spillet ble ikke funnet' });
+    }
+    
+    res.json({ message: 'Spillet ble slettet' });
+});
+
 // Åpner en viss port på serveren, og starter serveren
 app.listen(3000, () => {
     console.log('Server kjører på http://localhost:3000');

@@ -38,6 +38,31 @@ async function visSpel() {
             spelDiv.appendChild(link);
         }
 
+        // Opprett slette-knapp
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Slett';
+        deleteBtn.classList.add('delete-btn');
+        deleteBtn.addEventListener('click', async () => {
+            if (confirm(`Er du sikker på at du vil slette "${spel.tittel}"?`)) {
+                try {
+                    const response = await fetch(`/spel/${spel.id}`, {
+                        method: 'DELETE'
+                    });
+                    if (response.ok) {
+                        spelDiv.remove(); // Fjern fra DOM
+                        alert('Spillet ble slettet');
+                    } else {
+                        alert('Feil ved sletting');
+                    }
+                } catch (error) {
+                    console.error(error);
+                    alert('Feil ved sletting');
+                }
+            }
+        });
+        spelDiv.appendChild(deleteBtn);
+
+        // Legger alt innholdet inn i "spelsamling"
         document.querySelector('#spelsamling').appendChild(spelDiv);
     }
 }
