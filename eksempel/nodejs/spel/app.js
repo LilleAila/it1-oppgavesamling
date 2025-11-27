@@ -75,6 +75,25 @@ app.delete('/spel/:id', (req, res) => {
     res.json({ message: 'Spillet ble slettet' });
 });
 
+// Rute for å oppdatere et spill
+app.put('/spel/:id', (req, res) => {
+    const id = req.params.id;
+    const { tittel, beskrivelse, aar, utvikler, bilde } = req.body;
+    
+    const result = db.prepare(`
+        UPDATE spel 
+        SET tittel = ?, beskrivelse = ?, aar = ?, utvikler = ?, bilde = ?
+        WHERE id = ?
+    `).run(tittel, beskrivelse, aar, utvikler, bilde, id);
+    
+    if (result.changes === 0) {
+        return res.status(404).json({ error: 'Spillet ble ikke funnet' });
+    }
+    
+    const oppdatertSpel = db.prepare('SELECT * FROM spel WHERE id = ?').get(id);
+    res.json(oppdatertSpel);
+});
+
 // Åpner en viss port på serveren, og starter serveren
 app.listen(3000, () => {
     console.log('Server kjører på http://localhost:3000');
