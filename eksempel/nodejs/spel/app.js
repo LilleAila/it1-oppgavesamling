@@ -94,6 +94,23 @@ app.put('/spel/:id', (req, res) => {
     res.json(oppdatertSpel);
 });
 
+// Rute for å legge til et nytt spill
+app.post('/spel', (req, res) => {
+    const { tittel, beskrivelse, aar, utvikler, bilde } = req.body;
+    
+    if (!tittel) {
+        return res.status(400).json({ error: 'Tittel er påkrevd' });
+    }
+    
+    const result = db.prepare(`
+        INSERT INTO spel (tittel, beskrivelse, aar, utvikler, bilde)
+        VALUES (?, ?, ?, ?, ?)
+    `).run(tittel, beskrivelse, aar, utvikler, bilde);
+    
+    const nyttSpel = db.prepare('SELECT * FROM spel WHERE id = ?').get(result.lastInsertRowid);
+    res.status(201).json(nyttSpel);
+});
+
 // Åpner en viss port på serveren, og starter serveren
 app.listen(3000, () => {
     console.log('Server kjører på http://localhost:3000');

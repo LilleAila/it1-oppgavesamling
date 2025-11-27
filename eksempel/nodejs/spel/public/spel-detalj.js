@@ -45,7 +45,11 @@ function visSpel(spel) {
 
         if (spel.bilde) {
             const img = document.createElement('img');
-            img.src = "/bileter/" + spel.bilde;
+            if (spel.bilde.startsWith('http://') || spel.bilde.startsWith('https://')) {
+                img.src = spel.bilde;
+            } else {
+                img.src = `/bileter/${spel.bilde}`;
+            }
             img.alt = spel.tittel;
             container.appendChild(img);
         }
