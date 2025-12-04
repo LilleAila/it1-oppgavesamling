@@ -4,10 +4,12 @@ Nå skal vi se på hvordan vi kan lage og håndtere skjemaer i JavaScript. Skjem
 
 Det som er spesielt med skjemaer er at de ofte inneholder flere forskjellige typer input-felt, som tekstfelt, avkrysningsbokser, radioknapper og nedtrekksmenyer. I tillegg må vi kunne hente ut og behandle dataene som brukeren sender inn.
 
-Denne guiden består av tre deler:
+Denne guiden består av fem deler:
 1. [Enkelt, "barebones" eksempel](#enkelt-barebones-eksempel)
 2. [Mer avanserte skjemaer](#mer-avanserte-skjemaer)
 3. [Stilsetting av skjemaer](#stilsetting-av-skjemaer)
+4. [Oppgaver](#oppgaver)
+5. [Videre ressurser](#videre-ressurser)
 
 Lenke til nedlasting av filene: [Se all koden](../../eksempel/js/forms/).
 
@@ -61,6 +63,9 @@ La oss se på et eksempel med flere forskjellige input-typer i skjemaet.
     <label for="email">E-post:</label>
     <input type="email" id="email" name="email" required>
 
+    <label for="password">Passord:</label>
+    <input type="password" id="password" name="password" required>
+
     <label for="alder">Alder:</label>
     <input type="number" id="alder" name="alder" min="1" max="120" required>
 
@@ -87,6 +92,8 @@ La oss se på et eksempel med flere forskjellige input-typer i skjemaet.
 I dette skjemaet har vi lagt til flere forskjellige input-typer, inkludert e-post, nummer, radioknapper, en nedtrekksmeny med flere valg, og et fargevalg.
 
 Det er flere ting å legge merke til her.
+- Se hvordan vi bruker `type="email"` for e-postfeltet, som gir innebygd validering for e-postadresser.
+- Se hvordan vi bruker `type="password"` for passordfeltet, som skjuler teksten når brukeren skriver.
 - Se hvordan vi bruker `name`-attributtet for radioknapper for å gruppere dem sammen.
 - For nedtrekksmenyen har vi satt `multiple`-attributtet, som lar brukeren velge flere alternativer. Fjern dette for å få en enkel nedtrekksmeny.
 - Vi kan sette begrensninger på input-feltene, som `min` og `max` for nummerfeltet.
@@ -105,6 +112,7 @@ skjema.addEventListener('submit', function(event) {
     event.preventDefault(); // Forhindre at siden lastes på nytt = SPA = "Single Page Application"
 
     const email = document.getElementById('email').value;
+    const passord = document.getElementById('password').value;
     const alder = document.getElementById('alder').value;
     const kjonn = document.querySelector('input[name="kjonn"]:checked').value;
     const interesserSelect = document.getElementById('interesser');
@@ -112,6 +120,7 @@ skjema.addEventListener('submit', function(event) {
 
     const farge = document.getElementById('farge').value;
     console.log('E-post:', email);
+    console.log('Passord:', passord);
     console.log('Alder:', alder);
     console.log('Kjønn:', kjonn);
     console.log('Interesser:', interesser);
@@ -125,7 +134,7 @@ Den mest avanserte delen i eksempelet over er hvordan vi håndterer interesser-f
 
 En nærmere forklaring på map-funksjonen: Den tar hvert element i arrayet (i dette tilfellet hvert valgt alternativ) og returnerer verdien (`option.value`) for hvert av dem, som vi samler i et nytt array kalt `interesser`.
 
-### Valgfri, avansert teknikk: Hente ut data fra flere input-felt
+### Valgfri teknikk: Hente ut data fra flere input-felt
 
 Når vi har et skjema med flere input-felt, må vi kunne hente ut verdiene fra disse feltene når skjemaet sendes inn. Vi kan gjøre dette ved å bruke `FormData`-objektet i JavaScript.
 
@@ -141,6 +150,8 @@ skjema.addEventListener('submit', function(event) {
     const data = Object.fromEntries(formData.entries());
 
     console.log(data);
+    // Nå kan vi få tilgang til verdiene slik:
+    console.log('E-post:', data.email);
 });
 ```
 
@@ -169,8 +180,6 @@ body {
 }
 
 form {
-    max-width: 480px;
-    width: 100%;
     padding: 40px;
     background-color: #ffffff;
     border-radius: 16px;
@@ -277,3 +286,13 @@ button:hover {
     box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
 }
 ```
+
+## Oppgaver
+
+1. Lag et påmeldingsskjema til en konferanse. Skjemaet skal inneholde felter for navn, e-post, adresse, telefonnummer, og en nedtrekksmeny for valg av billettype (standard, VIP, student). Du skal også ta med hvilke dager deltakeren ønsker å delta, noe som skal gjøre ved å bruke datepickers.
+2. Lag et tilbakemeldingsskjema for en nettside. Skjemaet skal inneholde felter for navn, e-post, en vurdering (1-5 stjerner), og et tekstområde for kommentarer. Implementer validering for e-postfeltet og sørg for at kommentarfeltet ikke kan være tomt.
+
+## Videre ressurser
+
+- [MDN Web Docs: Working with forms](https://developer.mozilla.org/en-US/docs/Learn/Forms)
+- [W3Schools: HTML Forms](https://www.w3schools.com/html/html_forms.asp)

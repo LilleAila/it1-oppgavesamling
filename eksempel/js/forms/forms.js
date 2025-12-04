@@ -4,6 +4,7 @@ skjema.addEventListener('submit', function(event) {
     event.preventDefault(); // Forhindre at siden lastes på nytt = SPA = "Single Page Application"
 
     const email = document.getElementById('email').value;
+    const passord = document.getElementById('password').value;
     const alder = document.getElementById('alder').value;
     const kjonn = document.querySelector('input[name="kjonn"]:checked').value;
     const interesserSelect = document.getElementById('interesser');
@@ -11,6 +12,7 @@ skjema.addEventListener('submit', function(event) {
 
     const farge = document.getElementById('farge').value;
     console.log('E-post:', email);
+    console.log('Passord:', passord);
     console.log('Alder:', alder);
     console.log('Kjønn:', kjonn);
     console.log('Interesser:', interesser);
@@ -28,4 +30,6 @@ skjema.addEventListener('submit', function(event) {
 //     const data = Object.fromEntries(formData.entries());
 
 //     console.log(data);
+//     // Nå kan vi få tilgang til verdiene slik:
+//     console.log('E-post:', data.email);
 // });
