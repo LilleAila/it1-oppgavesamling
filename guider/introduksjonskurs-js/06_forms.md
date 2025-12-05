@@ -149,8 +149,9 @@ skjema.addEventListener('submit', function(event) {
     const formData = new FormData(skjema);
     const data = Object.fromEntries(formData.entries());
 
+    // Utskrift av alle dataene, som et objekt
     console.log(data);
-    // Nå kan vi få tilgang til verdiene slik:
+    // Nå kan vi spesifikt se på en av verdiene slik:
     console.log('E-post:', data.email);
 });
 ```
