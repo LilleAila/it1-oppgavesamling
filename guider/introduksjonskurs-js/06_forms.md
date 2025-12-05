@@ -287,6 +287,33 @@ button:hover {
 }
 ```
 
+
+Du kan også tydeligere vise hvilke felt som er fylt ut feil, gjerne fortløpende mens brukeren fyller ut skjemaet. Dette kan eksempelvis gjøres som under.
+
+```css
+/* 1. Generell stil for ugyldig felt */
+input:invalid {
+    /* Endrer bakgrunnen til en lys rød farge */
+    background-color: #ffe8e8;
+    /* Legger til en rød ramme */
+    border: 2px solid red;
+}
+
+/* 2. Stil for gyldig felt (valgfritt, men anbefalt for å vise suksess) */
+input:valid {
+    background-color: #e8fff1; /* Lys grønn bakgrunn */
+    border: 2px solid green;
+}
+
+/* 3. Stil når feltet er i fokus OG ugyldig (for å tydeliggjøre feilen) */
+input:focus:invalid {
+    /* Bruk gjerne en litt mørkere rød farge eller skygge her */
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+    /* For å overstyre standard fokus-stil */
+    outline: none; 
+}
+```
+
 ## Oppgaver
 
 1. Lag et påmeldingsskjema til en konferanse. Skjemaet skal inneholde felter for navn, e-post, adresse, telefonnummer, og en nedtrekksmeny for valg av billettype (standard, VIP, student). Du skal også ta med hvilke dager deltakeren ønsker å delta, noe som skal gjøre ved å bruke datepickers.

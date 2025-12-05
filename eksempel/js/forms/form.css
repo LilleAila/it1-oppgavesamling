@@ -119,3 +119,25 @@ button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
 }
+
+/* 1. Generell stil for ugyldig felt */
+input:invalid {
+    /* Endrer bakgrunnen til en lys rød farge */
+    background-color: #ffe8e8;
+    /* Legger til en rød ramme */
+    border: 2px solid red;
+}
+
+/* 2. Stil for gyldig felt (valgfritt, men anbefalt for å vise suksess) */
+input:valid {
+    background-color: #e8fff1; /* Lys grønn bakgrunn */
+    border: 2px solid green;
+}
+
+/* 3. Stil når feltet er i fokus OG ugyldig (for å tydeliggjøre feilen) */
+input:focus:invalid {
+    /* Bruk gjerne en litt mørkere rød farge eller skygge her */
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+    /* For å overstyre standard fokus-stil */
+    outline: none; 
+}
