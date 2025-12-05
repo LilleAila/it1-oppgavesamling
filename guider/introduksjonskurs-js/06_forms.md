@@ -136,9 +136,9 @@ En nærmere forklaring på map-funksjonen: Den tar hvert element i arrayet (i de
 
 ### Valgfri teknikk: Hente ut data fra flere input-felt
 
-Når vi har et skjema med flere input-felt, må vi kunne hente ut verdiene fra disse feltene når skjemaet sendes inn. Vi kan gjøre dette ved å bruke `FormData`-objektet i JavaScript.
+En alternativ teknikk er å hente ut alle feltene vha. `FormData`-objektet i JavaScript. På mang måter er dette en enklere og mer skalerbar måte å hente ut data fra skjemaer med mange input-felt. Det eneste er at denne teknikken kanskje er litt mindre intuitiv i starten, og krever at du forstår hva objekter og `FormData` er.
 
-Her er et eksempel på hvordan vi kan hente ut data fra skjemaet med flere input-felt:
+Her er et eksempel på hvordan vi kan hente ut data fra skjemaet med flere input-felt, og hvordan du kan få tilgang til verdiene:
 
 ```javascript
 const skjema = document.getElementById('skjema');
