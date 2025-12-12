@@ -1,0 +1,14 @@
+/* Register the custom Christmas font from the local fonts folder */
+@font-face {
+	font-family: "Christmas";
+	src: url("fonts/Christmas.otf") format("opentype");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* Apply the custom font to the h1 element */
+h1 {
+	font-family: "Christmas", cursive, serif;
+}
+
