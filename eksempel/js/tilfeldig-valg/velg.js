@@ -1,55 +1,55 @@
 // Funksjon for å velge N tilfeldige element fra en array
 function velgTilfeldig(array, antall) {
-  // Lag en kopi av arrayen slik at vi ikke endrer originalen
-  let kopi = [...array];
-  
-  // Array for å lagre de valgte elementene
-  let valgt = [];
-  
-  // Velg antall tilfeldige element
-  for (let i = 0; i < antall; i++) {
-    // Generer et tilfeldig indeks-nummer
-    let tilfeldigIndeks = Math.floor(Math.random() * kopi.length);
-    
-    // Hent elementet på den indeksen
-    let element = kopi[tilfeldigIndeks];
-    
-    // Legg det til i valgt-arrayen
-    valgt.push(element);
-    
-    // Fjern elementet fra kopien slik at det ikke velges igjen
-    kopi.splice(tilfeldigIndeks, 1);
-  }
-  
-  return valgt;
+	// Lag en kopi av arrayen slik at vi ikke endrer originalen
+	let kopi = [...array];
+
+	// Array for å lagre de valgte elementene
+	let valgt = [];
+
+	// Velg antall tilfeldige element
+	for (let i = 0; i < antall; i++) {
+		// Generer et tilfeldig indeks-nummer
+		let tilfeldigIndeks = Math.floor(Math.random() * kopi.length);
+
+		// Hent elementet på den indeksen
+		let element = kopi[tilfeldigIndeks];
+
+		// Legg det til i valgt-arrayen
+		valgt.push(element);
+
+		// Fjern elementet fra kopien slik at det ikke velges igjen
+		kopi.splice(tilfeldigIndeks, 1);
+	}
+
+	return valgt;
 }
 
 // Funksjon for å parse CSV-data
 function parseCsv(csvData) {
-  // Del opp teksten i linjer
-  let linjer = csvData.trim().split('\n');
-  
-  // Fjern overskriften (første linje)
-  linjer.shift();
-  
-  // Lag en array for alle brukerne
-  let brukere = [];
-  
-  // Gå gjennom hver linje
-  for (let linje of linjer) {
-    // Del linjen på semikolon
-    let deler = linje.split(';');
-    
-    // Hent fornavn og etternavn
-    let fornavn = deler[4].trim();
-    let etternavn = deler[5].trim();
-    let navn = fornavn + ' ' + etternavn;
-    
-    // Legg brukeren til i arrayen
-    brukere.push(navn);
-  }
-  
-  return brukere;
+	// Del opp teksten i linjer
+	let linjer = csvData.trim().split('\n');
+
+	// Fjern overskriften (første linje)
+	linjer.shift();
+
+	// Lag en array for alle brukerne
+	let brukere = [];
+
+	// Gå gjennom hver linje
+	for (let linje of linjer) {
+		// Del linjen på semikolon
+		let deler = linje.split(';');
+
+		// Hent fornavn og etternavn
+		let fornavn = deler[4].trim();
+		let etternavn = deler[5].trim();
+		let navn = fornavn + ' ' + etternavn;
+
+		// Legg brukeren til i arrayen
+		brukere.push(navn);
+	}
+
+	return brukere;
 }
 
 // Async funksjon som håndterer hele prosessen
