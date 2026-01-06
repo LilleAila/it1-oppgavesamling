@@ -1,4 +1,5 @@
-// Funksjon for å velge N tilfeldige element fra en array
+// Funksjon for å velge "antall" tilfeldige element fra en array,
+// returnerer arrayen med de utvalgte.
 function velgTilfeldig(array, antall) {
 	// Lag en kopi av arrayen slik at vi ikke endrer originalen
 	let kopi = [...array];
