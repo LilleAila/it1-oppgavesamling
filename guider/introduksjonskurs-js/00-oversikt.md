@@ -28,6 +28,10 @@ Les [lyttefunksjoner og hendelseshåndtering](05_lyttefunksjoner_og_hendelseshan
 
 Les [skjemaer og input-håndtering](06_forms.md), for detaljer om blant annet hvordan man oppretter og håndterer HTML-skjemaer (forms), validering av brukerinput, og hvordan man henter ut data fra skjemaer ved hjelp av JavaScript.
 
+## Hente data og opprette elementer
+
+Les [hente data og opprette elementer](07_hente_data_og_opprette_elementer.md), for detaljer om blant annet hvordan man henter data fra en ekstern kilde med `fetch`, bruker `async` og `await` for asynkron håndtering, og hvordan man oppretter og legger til nye HTML-elementer i DOM-en vha. `createElement` og `appendChild`.
+
 ## Mer innhold kommer!
 
 ..etter hvert.
