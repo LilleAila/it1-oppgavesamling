@@ -39,6 +39,23 @@ function visDefinisjon(ord) {
     betydning.innerText = ord[0].meanings[0].definitions[0].definition;
     resultatDiv.appendChild(betydning);
 
+    // Uttale av lyden, enkel tilnærming
+    // const lyd = document.createElement("audio");
+    // lyd.src = ord[0].phonetics[0].audio;
+    // lyd.controls = true;
+    // resultatDiv.appendChild(lyd);
+
+    // Uttale av lyden, mer tilpasningsdyktig kode
+    // NB: find: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+    const phoneticMedAudio = ord[0].phonetics.find(p => p.audio);
+    
+    if (phoneticMedAudio) {
+        const lyd = document.createElement("audio");
+        lyd.src = phoneticMedAudio.audio;
+        lyd.controls = true;
+        resultatDiv.appendChild(lyd);
+    }
+
     // NB: Dette er ein enkel visning som berre viser den første betydninga og forklaringa.
     // I tillegg, det er ikkje handtert mange problem som kan oppstå med enkelte ord.
     // Videre arbeid: Legg til fleire definisjonar, eksempel, og handter fleire betydningar.
