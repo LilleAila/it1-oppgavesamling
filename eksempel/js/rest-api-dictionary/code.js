@@ -35,7 +35,7 @@ function visDefinisjon(ord) {
     resultatDiv.appendChild(overskrift);
 
     // Første betydning i API-responsen
-    const betydning = document.createElement("h3");
+    const betydning = document.createElement("p");
     betydning.innerText = ord[0].meanings[0].definitions[0].definition;
     resultatDiv.appendChild(betydning);
 
