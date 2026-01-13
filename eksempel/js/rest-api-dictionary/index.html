@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Definisjon av ord</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="code.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>Definisjonsmesteren</h1>
+        <p>
+            Skriv inn ordet du ynskjer å lese definisjonen av, og det blir gjort 
+            eit søk via <a href="https://dictionaryapi.dev/">https://dictionaryapi.dev/</a>.
+        </p>
+        <form id="skjema">
+            <label for="inputOrd">Ord:</label>
+            <input id="inputOrd" type="text" placeholder="Ordet du ynskjer å sjå definisjonen av." size="50">
+            <button type="submit">Søk</button>
+        </form>
+        <hr>
+        <div id="resultat">
+            Her kjem definisjonen til å visast.
+        </div>
+    </main>
+</body>
+</html>

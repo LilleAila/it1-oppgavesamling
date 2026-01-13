@@ -1,0 +1,22 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    background-color: lightgray;
+}
+
+main {
+    width: 500px;
+    border: 2px solid black;
+    padding: 2rem;
+    background-color: white;
+}
+
+form {
+    margin-bottom: 1rem;
+}
