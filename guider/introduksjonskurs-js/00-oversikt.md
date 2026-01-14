@@ -32,6 +32,9 @@ Les [skjemaer og input-håndtering](06_forms.md), for detaljer om blant annet hv
 
 Les [hente data og opprette elementer](07_hente_data_og_opprette_elementer.md), for detaljer om blant annet hvordan man henter data fra en ekstern kilde med `fetch`, bruker `async` og `await` for asynkron håndtering, og hvordan man oppretter og legger til nye HTML-elementer i DOM-en vha. `createElement` og `appendChild`.
 
+## Javascript-metoder for arrays: filter, find, map, reduce, some, every og sort
+Les [bruksområder for filter, find, map, reduce, some, every og sort](08_filter_find_map_reduce_some_every.md), for detaljer om hvordan du kan bruke disse kraftige metodene for å manipulere og analysere arrays i JavaScript.
+
 ## Mer innhold kommer!
 
 ..etter hvert.
