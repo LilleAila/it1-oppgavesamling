@@ -84,6 +84,7 @@ app.post("/api/leggtilperson", async (req, res) => {
     } catch (error) {
         console.error("Feil ved oppretting av bruker:", error);
         res.status(500).json({ message: "Noe gikk galt på serveren" });
+    }
 });
 
 // Rute for å logge inn
