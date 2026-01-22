@@ -1,46 +1,71 @@
 // ORDBOK DATASETT
-// Dette datasettet inneholder 3 ord med ulike bruksområder (ordklasser) og definisjoner
-
-// NB NB NB NB!!! Eksempeldataene under er direkte feil og mangelfulle, de er kun ment som utgangspunkt for oppgavene!
+// Dette datasettet inneholder noen ord med ulike bruksområder (ordklasser), og definisjoner
 
 const ordbok = [
     {
-        ord: "løpe",
+        ord: "tre",
         ordklasser: [
             {
+                type: "substantiv",
+                definisjon: "en stor plante med stamme og greiner",
+                eksempel: "De klatret opp i et høyt tre."
+            },
+            {
+                type: "tallord",
+                definisjon: "tallet som kommer etter to og før fire",
+                eksempel: "Jeg har tre søstre."
+            },
+            {
                 type: "verb",
-                definisjon: "å bevege seg raskt ved å sette det ene beinet foran det andre i rask rekkefølge",
-                eksempel: "Han må løpe for å rekke bussen."
+                definisjon: "å føre noe gjennom en åpning, eller å sette foten ned",
+                eksempel: "Du må tre tråden gjennom nåløyet."
+            }
+        ],
+        popularitet: 98,
+        antallBokstaver: 3
+    },
+    {
+        ord: "rett",
+        ordklasser: [
+            {
+                type: "adjektiv",
+                definisjon: "som ikke er bøyd, som går den korteste veien",
+                eksempel: "Du må tegne en rett linje."
             },
             {
                 type: "substantiv",
-                definisjon: "et løp, en distanse som tilbakelegges ved å løpe",
-                eksempel: "Det var et langt løpe til toppen."
+                definisjon: "en tilberedt porsjon mat",
+                eksempel: "Vi fikk servert en deilig rett til middag."
+            },
+            {
+                type: "substantiv",
+                definisjon: "lov og domstol, eller det man har krav på",
+                eksempel: "Saken skal opp i retten neste uke."
             }
         ],
-        popularitet: 95,
+        popularitet: 92,
         antallBokstaver: 4
     },
     {
-        ord: "lys",
+        ord: "sky",
         ordklasser: [
             {
                 type: "substantiv",
-                definisjon: "elektromagnetisk stråling som gjør at vi kan se",
-                eksempel: "Lyset fra solen er sterkt."
+                definisjon: "synlig masse av vanndamp som svever i luften",
+                eksempel: "Det var ikke en eneste sky på himmelen."
             },
             {
                 type: "adjektiv",
-                definisjon: "ikke mørk, av lys farge",
-                eksempel: "Hun har lyst hår."
+                definisjon: "engstelig, reservert eller redd for mennesker",
+                eksempel: "Katten var veldig sky og gjemte seg under sofaen."
             },
             {
                 type: "verb",
-                definisjon: "å gi lys, å skinne",
-                eksempel: "Stearinlyset lyser i mørket."
+                definisjon: "å unngå noe eller noen bevisst",
+                eksempel: "Han pleier å sky unna vanskelige oppgaver."
             }
         ],
-        popularitet: 88,
+        popularitet: 75,
         antallBokstaver: 3
     },
     {
@@ -55,14 +80,21 @@ const ordbok = [
                 type: "adjektiv",
                 definisjon: "regelmessig, permanent",
                 eksempel: "Han har fast jobb."
-            },
-            {
-                type: "substantiv",
-                definisjon: "periode uten mat",
-                eksempel: "Under fasten spiser man ikke."
             }
         ],
         popularitet: 72,
+        antallBokstaver: 4
+    },
+    {
+        ord: "løpe",
+        ordklasser: [
+            {
+                type: "verb",
+                definisjon: "å bevege seg raskt ved å sette det ene beinet foran det andre i rask rekkefølge",
+                eksempel: "Han må løpe for å rekke bussen."
+            }
+        ],
+        popularitet: 95,
         antallBokstaver: 4
     }
 ];
