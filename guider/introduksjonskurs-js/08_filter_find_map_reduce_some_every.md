@@ -40,6 +40,8 @@ console.table(voksne);
 
 Dette vil gi oss et nytt array med alle personer som er 18 år eller eldre.
 
+Les mer om `filter` hos MDN: [Array.prototype.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+
 ## find
 `find` returnerer det første elementet som oppfyller en bestemt betingelse.
 
@@ -50,6 +52,8 @@ console.table(personOver30);
 
 Dette vil gi oss den første personen som er eldre enn 30 år.
 
+Les mer om `find` hos MDN: [Array.prototype.find()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+
 ## map
 `map` brukes til å lage et nytt array ved å transformere hvert element i det opprinnelige arrayet.
 
@@ -58,6 +62,8 @@ const navnArray = personer.map(person => person.navn);
 console.table(navnArray);
 ```
 Dette vil gi oss et nytt array som inneholder bare navnene på personene.
+
+Les mer om `map` hos MDN: [Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 
 ## reduce
 `reduce` brukes til å redusere et array til en enkelt verdi ved å bruke en funksjon som kombinerer elementene.
@@ -69,6 +75,8 @@ console.log(totalAlder);
 
 Dette vil gi oss summen av alderen til alle personene i arrayet.
 
+Les mer om `reduce` hos MDN: [Array.prototype.reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
+
 ## some
 `some` sjekker om minst ett element i arrayet oppfyller en bestemt betingelse.
 
@@ -78,6 +86,8 @@ console.log(harVoksen);
 ```
 
 Dette vil returnere `true` hvis det finnes minst én person som er 18 år eller eldre.
+
+Les mer om `some` hos MDN: [Array.prototype.some()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
 
 ## every
 `every` sjekker om alle elementene i arrayet oppfyller en bestemt betingelse.
@@ -89,6 +99,8 @@ console.log(alleVoksne);
 
 Dette vil returnere `true` bare hvis alle personene er 18 år eller eldre.
 
+Les mer om `every` hos MDN: [Array.prototype.every()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
+
 ## sort
 `sort` brukes til å sortere elementene i et array basert på en bestemt kriterie.
 
@@ -99,3 +111,5 @@ console.table(sortertEtterAlder);
 
 Dette vil gi oss et nytt array sortert etter alder i stigende rekkefølge.
 slice brukes her for å lage en kopi av arrayet før sortering, slik at det originale arrayet forblir uendret.
+
+Les mer om `sort` hos MDN: [Array.prototype.sort()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
