@@ -40,6 +40,17 @@ console.table(voksne);
 
 Dette vil gi oss et nytt array med alle personer som er 18 år eller eldre.
 
+Dette kunne vi gjort uten `filter` ved å bruke en `for`-løkke og en `if`-setning.
+```js
+const voksneUtenFilter = [];
+for (let i = 0; i < personer.length; i++) {
+    if (personer[i].alder >= 18) {
+        voksneUtenFilter.push(personer[i]);
+    }
+}
+console.table(voksneUtenFilter);
+```
+
 Les mer om `filter` hos MDN: [Array.prototype.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 
 ## find
@@ -52,6 +63,18 @@ console.table(personOver30);
 
 Dette vil gi oss den første personen som er eldre enn 30 år.
 
+Dette kunne vi også gjort uten `find` ved å bruke en `for`-løkke og en `if`-setning.
+```js
+let personOver30UtenFind = null;
+for (let i = 0; i < personer.length; i++) {
+    if (personer[i].alder > 30) {
+        personOver30UtenFind = personer[i];
+        break; // Stopper løkken når vi finner den første personen
+    }
+}
+console.table(personOver30UtenFind);
+```
+
 Les mer om `find` hos MDN: [Array.prototype.find()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
 
 ## map
@@ -62,6 +85,15 @@ const navnArray = personer.map(person => person.navn);
 console.table(navnArray);
 ```
 Dette vil gi oss et nytt array som inneholder bare navnene på personene.
+
+Dette kunne vi også gjort uten `map` ved å bruke en `for`-løkke.
+```js
+const navnArrayUtenMap = [];
+for (let i = 0; i < personer.length; i++) {
+    navnArrayUtenMap.push(personer[i].navn);
+}
+console.table(navnArrayUtenMap);
+```
 
 Les mer om `map` hos MDN: [Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 
@@ -75,6 +107,15 @@ console.log(totalAlder);
 
 Dette vil gi oss summen av alderen til alle personene i arrayet.
 
+Dette kunne vi også gjort uten `reduce` ved å bruke en `for`-løkke.
+```js
+let totalAlderUtenReduce = 0;
+for (let i = 0; i < personer.length; i++) {
+    totalAlderUtenReduce += personer[i].alder;
+}
+console.log(totalAlderUtenReduce);
+```
+
 Les mer om `reduce` hos MDN: [Array.prototype.reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
 
 ## some
@@ -86,6 +127,18 @@ console.log(harVoksen);
 ```
 
 Dette vil returnere `true` hvis det finnes minst én person som er 18 år eller eldre.
+
+Dette kunne vi også gjort uten `some` ved å bruke en `for`-løkke og en `if`-setning.
+```js
+let harVoksenUtenSome = false;
+for (let i = 0; i < personer.length; i++) {
+    if (personer[i].alder >= 18) {
+        harVoksenUtenSome = true;
+        break; // Stopper løkken når vi finner en voksen
+    }
+}
+console.log(harVoksenUtenSome);
+```
 
 Les mer om `some` hos MDN: [Array.prototype.some()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
 
@@ -99,6 +152,18 @@ console.log(alleVoksne);
 
 Dette vil returnere `true` bare hvis alle personene er 18 år eller eldre.
 
+Dette kunne vi også gjort uten `every` ved å bruke en `for`-løkke og en `if`-setning.
+```js
+let alleVoksneUtenEvery = true;
+for (let i = 0; i < personer.length; i++) {
+    if (personer[i].alder < 18) {
+        alleVoksneUtenEvery = false;
+        break; // Stopper løkken når vi finner en som ikke er voksen
+    }
+}
+console.log(alleVoksneUtenEvery);
+```
+
 Les mer om `every` hos MDN: [Array.prototype.every()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
 
 ## sort
@@ -111,5 +176,23 @@ console.table(sortertEtterAlder);
 
 Dette vil gi oss et nytt array sortert etter alder i stigende rekkefølge.
 slice brukes her for å lage en kopi av arrayet før sortering, slik at det originale arrayet forblir uendret.
+
+Dette kunne vi også gjort uten `sort` ved å implementere en enkel sorteringsalgoritme som "boble-sortering".
+
+```js
+const personerKopi = personer.slice(); // Lag en kopi for å bevare originalen
+for (let i = 0; i < personerKopi.length - 1; i++) {
+    for (let j = 0; j < personerKopi.length - i - 1; j++) {
+        if (personerKopi[j].alder > personerKopi[j + 1].alder) {
+            // Bytt plass
+            const temp = personerKopi[j];
+            personerKopi[j] = personerKopi[j + 1];
+            personerKopi[j + 1] = temp;
+        }
+    }
+}
+
+console.table(personerKopi);
+```
 
 Les mer om `sort` hos MDN: [Array.prototype.sort()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
