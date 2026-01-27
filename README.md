@@ -19,8 +19,8 @@ Dette er et forsøk på å samle guider, oppgaver, løsningsforslag og eksempler
 - Github og lisensiering, hvilke regler gjeld, og brukes din kode for å trene opp KI-modeller?: [Les guide](./guider/guide%20-%20github%20og%20lisensiering.md)
 
 ### Databaser og SQL
-- Databaser og begreper. [Les guide](./guider/guide%20-%20begreper%20rundt%20databaser.md)
-- Spørringer, SQL (`S`tructured `Q`uery `L`anguage). [Les guide](./guider/guide%20-%20sql.md)
+- Databaser og begreper. [Les guide](./guider/databaser/guide%20-%20begreper%20rundt%20databaser.md)
+- Spørringer, SQL (`S`tructured `Q`uery `L`anguage). [Les guide](./guider/databaser/guide%20-%20sql.md)
 
 ### TypeScript
 - Introduksjon til TypeScript, med eksempler og oppgaver. [Les guide](./guider/guide%20-%20typescript.md)
