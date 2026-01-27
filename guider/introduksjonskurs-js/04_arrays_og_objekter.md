@@ -8,6 +8,7 @@ Arrays og objekter er to grunnleggende datatyper i JavaScript som brukes til å 
 4. [Objekter](#objekter)
 5. [Objekter i en array](#objekter-i-en-array)
 6. [JSON (JavaScript Object Notation)](#json-javascript-object-notation)
+7. [Arrays og kopiering av disse](#arrays-og-kopiering-av-disse)
 
 ## Arrays, og manipulering av disse
 
@@ -167,4 +168,60 @@ For å gå gjennom en liste av objekter i JSON, kan du bruke en løkke som vist 
 for (let student of studenter) {
     console.log(student.navn + " har " + student.poeng + " poeng.");
 }
+```
+
+## Arrays og kopiering av disse
+
+Aller først, du skal ikke bruke `=` for å kopiere en array eller et objekt i JavaScript. Dette skaper bare en referanse til den originale arrayen/objektet, og endringer i kopien vil påvirke originalen.
+
+```js
+let original = [1, 2, 3];
+let kopi = original; // Dette er feil for kopiering!
+kopi[0] = 10;
+console.log(original[0]); // Output: 10 (Originalen er endret!)
+```
+
+Du kan lage en grunn kopi (shallow copy) av en array ved å bruke `slice()`, spread-operatoren (`...`), eller `Array.from()`:
+
+```js
+let original = [1, 2, 3];
+let kopi1 = original.slice();
+let kopi2 = [...original];
+let kopi3 = Array.from(original);
+kopi1[0] = 10;
+console.log(original[0]); // Output: 1 (Originalen er urørt!)
+```
+
+Når du jobber med arrays av objekter i JavaScript, eller mer komplekse datastrukturer, er det viktig å skille mellom en **grunn kopi (shallow copy)** og en **dyp kopi (deep copy)**.
+
+Hvis du bare kopierer selve arrayen, vil objektene inni fremdeles peke til de samme minneadressene som originalen. Endrer du en egenskap i et objekt i kopien, endres det også i originalen.
+
+Her er de beste måtene å løse dette på:
+
+### 1: structuredClone()
+
+Den moderne og trygge metoden: structuredClone()
+
+Dette er nå den innebygde standarden i moderne nettlesere (og Node.js) for å lage en fullstendig dyp kopi. Den håndterer nestede objekter, arrays, datoer og mer uten problemer.
+
+```js
+const original = [{ id: 1, navn: "Ola" }, { id: 2, navn: "Kari" }];
+
+// Lager en fullstendig uavhengig kopi
+const kopi = structuredClone(original);
+
+kopi[0].navn = "Per"; 
+console.log(original[0].navn); // Output: "Ola" (Originalen er urørt!)
+```
+
+### 2: JSON-metoden
+
+Bruke JSON-metoden (kun for enkle objekter)
+Denne metoden fungerer bra for enkle objekter uten funksjoner, datoer eller spesielle datatyper. Den konverterer objektet til en JSON-streng og deretter tilbake til et objekt, noe som skaper en dyp kopi.
+
+```js
+const original = [{ id: 1, navn: "Ola" }, { id: 2, navn: "Kari" }];
+const kopi = JSON.parse(JSON.stringify(original));
+kopi[0].navn = "Per";
+console.log(original[0].navn); // Output: "Ola" (Originalen er urørt!)
 ```
