@@ -4,10 +4,12 @@ Docker lar oss pakke applikasjoner og deres avhengigheter i containere, noe som 
 
 Innhold:
 - [Installere Docker](#installere-docker)
+- [Følg de innebygde guidene i Docker Desktop](#følg-de-innebygde-guidene-i-docker-desktop)
 - [Grunnleggende Docker-kommandoer](#grunnleggende-docker-kommandoer)
-- [Eksempel på bruk for en Node JS-applikasjon](#eksempel-på-bruk-for-en-node-js-applikasjon)
 - [Eksempel: Kjøre en enkel webserver med Docker](#eksempel-kjøre-en-enkel-webserver-med-docker)
-- [Oppgave](#oppgave)
+- [Forsøk å kjøre kø-appen med Docker](#forsøk-å-kjøre-kø-appen-med-docker)
+- [Eksempel på bruk for en avansert Node JS-applikasjon](#eksempel-på-bruk-for-en-avansert-node-js-applikasjon)
+- [Oppgave, forsøk selv](#oppgave-forsøk-selv)
 
 ## Installere Docker
 
@@ -19,7 +21,17 @@ NB: Docker krever at maskinen din støtter virtualisering, og at dette er aktive
 
 NB2: På Windows må du ha WSL2 (Windows Subsystem for Linux 2) installert og aktivert. Alternativt Hyper-V.
 
+## Følg de innebygde guidene i Docker Desktop
+
+Når du har installert Docker Desktop, åpne programmet og følg disse innebygde guidene for å bli kjent med grensesnittet og funksjonene:
+- "What is a Container?"
+- "How do I run a Container?"
+
+Flere etter behov og ønske.
+
 ## Grunnleggende Docker-kommandoer
+
+Du kan administrere Docker via kommandolinjen, eller via Docker Desktop sitt grafiske grensesnitt. Du bør kjenne til begge deler.
 
 Her er noen grunnleggende Docker-kommandoer som er nyttige å kjenne til:
 - `docker --version`: Sjekk hvilken versjon av Docker som er installert.
@@ -32,13 +44,14 @@ Her er noen grunnleggende Docker-kommandoer som er nyttige å kjenne til:
 - `docker rmi <image_id>`: Fjern et Docker-bilde.
 - `docker build -t <image_name> .`: Bygg et Docker-bilde fra en Dockerfile i gjeldende katalog.
 
-## Eksempel på bruk for en Node JS-applikasjon
-
-Se den offisielle Docker-guiden for Node.js applikasjoner her:
-
-[Node.js Docker Guide](https://docs.docker.com/guides/nodejs/)
-
-PS: Om du er nybegynner, så anbefaler vi å prøve eksempelet rett under først, som viser hvordan du kan lage en enkel webserver med Docker.
+Det er også en del kommandoer relatert til Docker Compose, som brukes for å definere og kjøre multi-container Docker-applikasjoner via `docker compose`-kommandoen:
+- Start: `docker compose up -d` (-d for "detached" mode, som kjører i bakgrunnen)
+- Start og bygg på nytt: `docker compose up -d --build` (bygger bildene på nytt før oppstart)
+- Stopp og fjern containere: `docker compose down`
+- Slett alt inkl. volumer og foreldreløse containere: `docker compose down -v --remove-orphans`
+- Restart tjenester: `docker compose restart`
+- Se status: `docker compose ps`
+- Se logger: `docker compose logs -f --tail=100`
 
 ## Eksempel: Kjøre en enkel webserver med Docker
 
@@ -79,7 +92,7 @@ Se til at Docker Desktop kjører på din maskin, og følg stegene under for å l
    ```bash
    docker run -d -p 8080:80 min-docker-webserver
    ```
-6. Åpne nettleseren og gå til `http://localhost:8080` for å se webserveren i aksjon.
+6. Åpne nettleseren og gå til `http://localhost:8080` for å se innholdet på webserveren.
 
 ### Rydde opp
 
@@ -87,42 +100,27 @@ Når du er ferdig med å teste, kan du stoppe og fjerne containeren, samt fjerne
 
 ```bash
 docker ps -a # Finn container-IDen
-docker stop <container_id>
-docker rm <container_id>
-docker rmi min-docker-webserver
+docker stop <container_id> # Stopp containeren
+docker rm <container_id> # Fjern containeren
+docker rmi min-docker-webserver # Fjern bildet
 ```
 
-## Oppgave
+## Forsøk å kjøre kø-appen med Docker
 
-Lag en `Dockerfile` for [chatteappen](../eksempel/nodejs/chat-klasserom/) vi jobbet med tidligere i kurset, bygg bildet og kjør det i en container. Test at applikasjonen fungerer som forventet.
+Det ligger instruksjoner i README-filen for kø-appen vi har sett på i timene.
 
-Løsningsforslag, som kan kreve noen justeringer basert på dine potensielle endringer i applikasjonen:
+[Besøk vent-paa-tur-prosjektet på GitHub](https://github.com/hausnes/vent-paa-tur).
 
-```Dockerfile
-# Bruk en offisiell Node.js-bilde som base
-FROM node:alpine
+## Eksempel på bruk for en avansert Node JS-applikasjon
 
-# Sett arbeidskatalogen i containeren
-WORKDIR /app
+Se den offisielle Docker-guiden for Node.js applikasjoner her:
 
-# Kopier package.json og package-lock.json
-COPY package*.json ./
+[Node.js Docker Guide](https://docs.docker.com/guides/nodejs/)
 
-# Installer avhengigheter
-RUN npm install
+NB: Dette er et mer avansert eksempel, og kan hoppes over.
 
-# Kopier resten av applikasjonskoden
-COPY . .
+## Oppgave, forsøk selv
 
-# Start applikasjonen
-CMD ["npm", "start"]
+Gjør en an appene dine fra tidligere i år til en Docker-container. Lag en Dockerfile for appen din, bygg bildet, og kjør det i en container. Test at alt fungerer som forventet.
 
-# Eksponer porten applikasjonen kjører på
-EXPOSE 3000
-```
-
-Bygg bildet (stå i katalogen hvor Dockerfile ligger):
-
-```bash
-docker build -t chat-app .
-```
+Bruk gjerne KI for å hjelpe deg med å lage Dockerfile, og sette opp Docker for appen din! Det kan være mange små detaljer å huske på, og vanskelig å feilsøke dersom noe ikke fungerer som forventet.
