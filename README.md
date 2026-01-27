@@ -7,7 +7,8 @@ Dette er et forsøk på å samle guider, oppgaver, løsningsforslag og eksempler
 - Grunnleggende CSS, med noen nyttige eksempler: [Les guide](./guider/guide%20-%20css.md)
 
 ### Javascript
-- Nybegynnerkurs i **JS**: [Les guide](./guider/introduksjonskurs-js/00-oversikt.md)
+- Kurs i **JS**: [Les guide](./guider/introduksjonskurs-js/00-oversikt.md)
+    - Her finner du tema som variabler, datatyper, utskrift, aritmetikk, kontrollstrukturer, funksjoner, objekter, arrays, hendelseshåndtering, skjemaer, hente data vha fetch og mer.
 
 ### Node JS
 - Eksempelprosjekt **chatteapp**, med fokus på lesing fra, og skriving til, en database. [Les guide](./guider/guide%20-%20nodejs%20prosjekt.md)
