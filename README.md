@@ -22,8 +22,9 @@ Dette er et forsøk på å samle guider, oppgaver, løsningsforslag og eksempler
 
 ### Databaser og SQL
 - Databaser og begreper. [Les guide](./guider/databaser/guide%20-%20begreper%20rundt%20databaser.md)
+- Hvorfor ikke bruke mange-til-mange-forhold (N:M) i databaseene våre? [Les guide](./guider/databaser/guide%20-%20mange-til-mange%20hvorfor%20ikke.md)
 - Spørringer, SQL (`S`tructured `Q`uery `L`anguage). [Les guide](./guider/databaser/guide%20-%20sql.md)
-- Oppgaver i SQL: [Les oppgaver](./oppgaver/oppgaver%20-%20sql.md)
+- Oppgaver i datamodellering og SQL: [Les oppgaver](./oppgaver/oppgaver%20-%20sql.md)
 
 ### TypeScript
 - Introduksjon til TypeScript, med eksempler og oppgaver. [Les guide](./guider/guide%20-%20typescript.md)
