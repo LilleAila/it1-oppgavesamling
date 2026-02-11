@@ -7,7 +7,7 @@ async function hentHusinfo() {
     console.log(data);
     
     // Dette er det første navnet som står inne i JSON-fila
-    // NB: Legg merke til at det er ein array!
+    // NB: Legg merke til at me må skrive .hogwarts_houses, fordi det er eit objekt - og under der ligg det ein array!
     console.log("\nHer er resultatet av console.log(data.hogwarts_houses):")
     console.log(data.hogwarts_houses);
 
