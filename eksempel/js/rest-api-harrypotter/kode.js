@@ -38,9 +38,9 @@ async function hentHusinfo() {
 
     // Så, for å slå alt dette saman, og hente ut alle medlemmene i alle husa, kan me bruke to løkker:
     console.log("\nHer er resultatet av to løkker som hentar ut alle medlemmene i alle husa:")
-    for (let i = 0; i < data.hogwarts_houses.length; i++) {
+    for (let i = 0; i < data.hogwarts_houses.length; i++) { // denne løkka går gjennom alle husa
         console.log("Medlemmer i " + data.hogwarts_houses[i].house_name + ":");
-        for (let j = 0; j < data.hogwarts_houses[i].members.length; j++) {
+        for (let j = 0; j < data.hogwarts_houses[i].members.length; j++) { // denne løkka går gjennom alle medlemmene i det gitte huset
             console.log("- " + data.hogwarts_houses[i].members[j].bio.full_name);
         }
     }
