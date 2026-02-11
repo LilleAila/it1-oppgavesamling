@@ -1,0 +1,26 @@
+{
+  "hogwarts_houses": [
+    {
+      "house_name": "Gryffindor",
+      "members": [
+        {
+          "bio": { "full_name": "Harry Potter", "actor": "Daniel Radcliffe" },
+          "assets": { "image_url": "https://hp-api.onrender.com/images/harry.jpg" }
+        },
+        {
+          "bio": { "full_name": "Hermione Granger", "actor": "Emma Watson" },
+          "assets": { "image_url": "https://hp-api.onrender.com/images/hermione.jpg" }
+        }
+      ]
+    },
+    {
+      "house_name": "Slytherin",
+      "members": [
+        {
+          "bio": { "full_name": "Draco Malfoy", "actor": "Tom Felton" },
+          "assets": { "image_url": "https://hp-api.onrender.com/images/draco.jpg" }
+        }
+      ]
+    }
+  ]
+}
