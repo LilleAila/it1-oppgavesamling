@@ -1,12 +1,17 @@
+// En array med rabattkoder som er gjeldende
 const rabattkoder = ["RABATT10", "RABATT20", "RABATT30"];
 
+// Vi henter ut skjemaet fra HTML ..
 let skjema = document.getElementById("skjema");
 
+// .. og legger en lyttefunksjon på det, som skal kjøre når skjemaet sendes inn.
 skjema.addEventListener("submit", handterSkjema);
 
+// Funksjon som håndterer innsendelsen av skjemaet
 function handterSkjema(event) {
     event.preventDefault(); // Forhindrer at siden refresher når skjemaet sendes inn
 
+    // Henter ut verdiene som brukeren har skrevet inn i skjemaet, og lagrer dem i variabler.
     let fornavn = document.getElementById("fornavn").value;
     let etternavn = document.getElementById("etternavn").value;
     let epost = document.getElementById("epost").value;
