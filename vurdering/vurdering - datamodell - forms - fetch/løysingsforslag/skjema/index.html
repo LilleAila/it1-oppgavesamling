@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oppgåve 1 - skjema</title>
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <!-- Skjemaet som brukaren fyller ut -->
+    <form id="skjema">
+        <label for="fornavn">Fornavn:</label>
+        <input type="text" id="fornavn" name="fornavn" required>
+
+        <label for="etternavn">Etternavn:</label>
+        <input type="text" id="etternavn" name="etternavn" required>
+
+        <label for="epost">Epost:</label>
+        <input type="email" id="epost" name="epost" required>
+
+        <label for="passord">Passord:</label>
+        <input type="password" id="passord" name="passord" required>
+
+        <label for="rabattkode">Rabattkode:</label>
+        <input type="text" id="rabattkode" name="rabattkode">
+
+        <button type="submit">submit</button>
+    </form>
+
+    <!-- Informasjon til brukaren etter at skjemaet er sendt inn (fylles ut av JS): -->
+    <div id="resultat"></div>
+</body>
+
+</html>

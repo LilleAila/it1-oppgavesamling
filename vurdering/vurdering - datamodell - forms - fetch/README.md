@@ -48,7 +48,7 @@ For å gjøre dette trenger du å bruke URL-en `https://www.anapioficeandfire.co
 
 ### 2.2 - Avansert krav:
 - Vis til å begynne med bare boktitlene i en liste på nettsiden.
-- Når brukeren klikker på en boktittel, skal det vises mer informasjon om den boken, inkludert navnet på boken, utgivelsesdato og antallet sider.
+- Når brukeren klikker på en boktittel, skal det vises mer informasjon om den boken, inkludert navnet på boken, utgivelsesdato og antallet sider. Du kan eventuelt vise som standard det du gjorde i 2.1, og så i denne deloppgaven legge til  informasjon om `mediaType` og `ISBN`.
 
 ### 2.3 - Krav til høy måloppnåelse:
 - Bruk av JavaScript for å hente data fra API-en og vise det på nettsiden (primært med `fetch`)

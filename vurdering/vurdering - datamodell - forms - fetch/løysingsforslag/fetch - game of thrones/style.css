@@ -1,0 +1,9 @@
+/* Skjuler ekstrainformasjon om bøkene, og viser den når man holder musen over boktitlene. */
+.mer_info {
+    visibility: hidden;
+}
+
+li:hover .mer_info {
+    visibility: visible;
+    background-color: lightgray;
+}
