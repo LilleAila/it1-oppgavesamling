@@ -62,3 +62,56 @@ SELECT *
 FROM fjelltur
 WHERE strftime('%Y', fjelltur.tidspunkt) = '2026';
 ```
+
+## Oppgave 6
+
+Tell hvor mange turer hver person har gått. Vis fornavn og "antall_turer". NB: Antall turer er ikke et eget felt, så du må telle dette ved hjelp av en spørring.
+
+Løsningsforslag:
+
+```sql
+SELECT person.fornavn, COUNT(fjelltur.fjell_id) AS antall_turer
+FROM person 
+LEFT JOIN fjelltur ON person.brukernavn = fjelltur.brukernavn
+GROUP BY person.brukernavn;
+```
+
+## Oppgave 7
+
+Tell hvor mange turer en gitt person har gått. Du kan bruke brukernavnet "hausnes" for å hente dette.
+Løsningsforslag:
+
+```sql
+SELECT person.fornavn, COUNT(fjelltur.fjell_id) AS antall_turer
+FROM person 
+LEFT JOIN fjelltur ON person.brukernavn = fjelltur.brukernavn
+WHERE person.brukernavn = 'hausnes';
+```
+
+## Oppgave 8
+
+Vis en liste over alle fjellene som en gitt person har gått. Du kan for eksempel hente alle fjellene som "Jo Bjørnar" har gått.
+
+Løsningsforslag:
+
+```sql
+SELECT fjell.fjellnavn
+FROM person
+JOIN fjelltur ON person.brukernavn = fjelltur.brukernavn
+JOIN fjell ON fjelltur.fjell_id = fjell.fjell_id
+WHERE person.fornavn = 'Jo Bjørnar';
+```
+
+Du kan eventuelt hente denne informasjonen basert på noe annet enn fornavn. Hvorfor kan det være viktig, tror du? Hva burde du velge? Korriger koden til å gjøre dette.
+
+## Oppgave 9
+
+Vis all informasjon unntatt brukernavnet om en gitt person.
+
+Løsningsforslag:
+
+```sql
+SELECT person.fornavn, person.etternavn, person.epost
+FROM person
+WHERE brukernavn = 'hausnes';
+```
