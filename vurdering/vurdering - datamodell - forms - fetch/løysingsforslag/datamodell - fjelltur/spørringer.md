@@ -1,6 +1,15 @@
 # Eksempel på spørringer mot fjelltur-databasen
 
-## Forskjeller mellom JOIN-typer
+## Tips og hjelp til oppgavene
+
+### Småtips
+
+- Bruk alltid **semikolon (;)** for å avslutte SQL-setninger
+- **STORE BOKSTAVER** for SQL-nøkkelord er tradisjonelt, men ikke påkrevd
+- Bruk **--** for kommentarer på én linje
+- Bruk **GROUP BY** for å gruppere resultater basert på et felt
+
+### Forskjeller mellom JOIN-typer
 
 NB: Når du kommer til oppgaver som begynner å bruke JOIN, LEFT JOIN, INNER JOIN og ev. andre varianter, så kan du komme tilbake til denne forklaringen:
 
@@ -110,7 +119,7 @@ JOIN fjell on fjelltur.fjell_id = fjell.fjell_id
 WHERE fjelltur.fjell_id = 1;
 ```
 
-Husk at du kan lese mer om forskjellige JOIN-typer [øverst i dokumentet](#forskjeller-mellom-join-typer)).
+Husk at du kan lese mer om forskjellige JOIN-typer [øverst i dokumentet](#tips-og-hjelp-til-oppgavene).
 
 ## Oppgave 9
 
@@ -153,7 +162,7 @@ LEFT JOIN fjelltur ON person.brukernavn = fjelltur.brukernavn
 GROUP BY person.brukernavn;
 ```
 
-Husk at du kan lese mer om forskjellige JOIN-typer [øverst i dokumentet](#forskjeller-mellom-join-typer)).
+Husk at du kan lese mer om forskjellige JOIN-typer [øverst i dokumentet](#tips-og-hjelp-til-oppgavene).
 
 ## Oppgave 12
 
@@ -167,7 +176,7 @@ LEFT JOIN fjelltur ON person.brukernavn = fjelltur.brukernavn
 WHERE person.brukernavn = 'hausnes';
 ```
 
-Husk at du kan lese mer om forskjellige JOIN-typer [øverst i dokumentet](#forskjeller-mellom-join-typer)).
+Husk at du kan lese mer om forskjellige JOIN-typer [øverst i dokumentet](#tips-og-hjelp-til-oppgavene).
 
 ## Oppgave 13
 
@@ -185,7 +194,7 @@ WHERE person.fornavn = 'Jo Bjørnar';
 
 Du kan eventuelt hente denne informasjonen basert på noe annet enn fornavn. Hvorfor kan det være viktig, tror du? Hva burde du velge? Korriger koden til å gjøre dette.
 
-Husk at du kan lese mer om forskjellige JOIN-typer [øverst i dokumentet](#forskjeller-mellom-join-typer)).
+Husk at du kan lese mer om forskjellige JOIN-typer [øverst i dokumentet](#tips-og-hjelp-til-oppgavene).
 
 ## Oppgave 14
 
