@@ -205,6 +205,8 @@ LEFT JOIN fjelltur ON person.brukernavn = fjelltur.brukernavn
 GROUP BY person.brukernavn;
 ```
 
+NB: Inne i COUNT kan du bruke et hvilket som helst felt fra den tabellen, altså eksempelvis **fjelltur_id** dersom det er mer logisk for deg.
+
 </details>
 
 Husk at du kan lese mer om forskjellige JOIN-typer [øverst i dokumentet](#tips-og-hjelp-til-oppgavene).
