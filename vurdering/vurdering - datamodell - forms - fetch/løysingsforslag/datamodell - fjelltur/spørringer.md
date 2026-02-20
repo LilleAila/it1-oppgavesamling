@@ -15,53 +15,68 @@ NB: Når du kommer til oppgaver som begynner å bruke JOIN, LEFT JOIN, INNER JOI
 
 1. `INNER JOIN` (og bare `JOIN`):
 
-    I SQLite er `JOIN` og `INNER JOIN` det samme.
+   I SQLite er `JOIN` og `INNER JOIN` det samme.
 
-    Hva den gjør: Den henter bare rader der det finnes en match i begge tabellene.
+   Hva den gjør: Den henter bare rader der det finnes en match i begge tabellene.
 
-    I ditt tilfelle: Hvis du har en person ("Visjo") som nettopp har registrert seg, men ikke har gått noen turer ennå, vil Visjo forsvinne helt fra resultatlisten. Hen blir ikke talt som 0; hen blir rett og slett ikke med i oversikten.
+   I ditt tilfelle: Hvis du har en person ("Visjo") som nettopp har registrert seg, men ikke har gått noen turer ennå, vil Visjo forsvinne helt fra resultatlisten. Hen blir ikke talt som 0; hen blir rett og slett ikke med i oversikten.
 
 2. `LEFT JOIN` (eller `LEFT OUTER JOIN`):
 
-    Hva den gjør: Den henter alle rader fra den venstre tabellen (person), uavhengig av om de har en match i den høyre tabellen (fjelltur).
+   Hva den gjør: Den henter alle rader fra den venstre tabellen (person), uavhengig av om de har en match i den høyre tabellen (fjelltur).
 
-    I ditt tilfelle: Hvis "Visjo" ikke har gått noen turer, vil hen likevel dukke opp i listen. Feltet for fjell_id vil være tomt (NULL), og COUNT vil telle dette som 0.
+   I ditt tilfelle: Hvis "Visjo" ikke har gått noen turer, vil hen likevel dukke opp i listen. Feltet for fjell_id vil være tomt (NULL), og COUNT vil telle dette som 0.
 
 ## Oppgave 1
 
 Hent all informasjon om alle fjellene.
 
-Løsningsforslag:
+<details>
+
+<summary>Løsningsforslag:</summary>
 
 ```sql
 SELECT * FROM fjell;
 ```
 
+</details>
+
 ## Oppgave 2
 
 Hent bare fjellnavn og høyde for alle fjellene.
 
-Løsningsforslag:
+<details>
+
+<summary>Løsningsforslag:</summary>
 
 ```sql
 SELECT fjellnavn, hoyde FROM fjell;
 ```
 
+</details>
+
 ## Oppgave 3
 
 Hent bare fjellnavn og høyde for alle fjellene som er høyere enn 2000 meter.
-Løsningsforslag:
+
+<details>
+
+<summary>Løsningsforslag:</summary>
 
 ```sql
 SELECT fjellnavn, hoyde FROM fjell
 WHERE hoyde > 2000;
 ```
 
+</details>
+
 ## Oppgave 4
 
 Hent bare fjellnavn og høyde for alle fjellene som har akkurat samme høyde. **NB: Avansert!**
 
-Løsningsforslag:
+<details>
+
+<summary>Løsningsforslag:</summary>
 
 ```sql
 SELECT fjellnavn, hoyde FROM fjell
@@ -72,11 +87,15 @@ WHERE hoyde IN (
 );
 ```
 
+</details>
+
 ## Oppgave 5
 
 Hent fjellnavn, høyde og navn på område for alle fjell. NB: Her må du hente informasjon fra både fjell-tabellen og omrade-tabellen.
 
-Løsningsforslag:
+<details>
+
+<summary>Løsningsforslag:</summary>
 
 ```sql
 SELECT fjell.fjellnavn, fjell.hoyde, omraade.navn
@@ -84,40 +103,54 @@ FROM fjell
 JOIN omraade ON fjell.omraade_id = omraade.id;
 ```
 
+</details>
+
 ## Oppgave 6
 
 Hent all informasjon om alle turer (fra fjelltur-tabellen).
 
-Løsningsforslag:
+<details>
+
+<summary>Løsningsforslag:</summary>
 
 ```sql
 SELECT * FROM fjelltur;
 ```
 
+</details>
+
 ## Oppgave 7
 
 Hent tidspunkt, varighet, beskrivelse, fjellnavn og høyde for alle turer.
 
-Løsningsforslag:
+<details>
+
+<summary>Løsningsforslag:</summary>
 
 ```sql
-SELECT fjelltur.tidspunkt, fjelltur.varighet, fjelltur.beskrivelse, fjell.fjellnavn, fjell.hoyde 
+SELECT fjelltur.tidspunkt, fjelltur.varighet, fjelltur.beskrivelse, fjell.fjellnavn, fjell.hoyde
 FROM fjelltur
 JOIN fjell ON fjelltur.fjell_id = fjell.fjell_id;
 ```
+
+</details>
 
 ## Oppgave 8
 
 Hent det samme som fra oppgave 7, men bare for fjellturer til Fanaråken (fjell_id = 1).
 
-Løsningsforslag:
+<details>
+
+<summary>Løsningsforslag:</summary>
 
 ```sql
-SELECT fjelltur.tidspunkt, fjelltur.varighet, fjelltur.beskrivelse, fjell.fjellnavn, fjell.hoyde 
+SELECT fjelltur.tidspunkt, fjelltur.varighet, fjelltur.beskrivelse, fjell.fjellnavn, fjell.hoyde
 FROM fjelltur
 JOIN fjell on fjelltur.fjell_id = fjell.fjell_id
 WHERE fjelltur.fjell_id = 1;
 ```
+
+</details>
 
 Husk at du kan lese mer om forskjellige JOIN-typer [øverst i dokumentet](#tips-og-hjelp-til-oppgavene).
 
@@ -125,7 +158,9 @@ Husk at du kan lese mer om forskjellige JOIN-typer [øverst i dokumentet](#tips-
 
 Tell hvor mange turer det har vært til Fanaråken (fjell_id = 1).
 
-Løsningsforslag:
+<details>
+
+<summary>Løsningsforslag:</summary>
 
 ```sql
 SELECT COUNT(*) AS antall_turer
@@ -133,11 +168,15 @@ FROM fjelltur
 WHERE fjell_id = 1;
 ```
 
+</details>
+
 ## Oppgave 10
 
 Tell hvor mange turer det har vært totalt i 2025 for seg, og 2026 for seg. **NB: Avansert!**
 
-Løsningsforslag:
+<details>
+
+<summary>Løsningsforslag:</summary>
 
 ```sql
 SELECT *
@@ -149,32 +188,43 @@ FROM fjelltur
 WHERE strftime('%Y', fjelltur.tidspunkt) = '2026';
 ```
 
+</details>
+
 ## Oppgave 11
 
 Tell hvor mange turer hver person har gått. Vis fornavn og "antall_turer". NB: Antall turer er ikke et eget felt, så du må telle dette ved hjelp av en spørring.
 
-Løsningsforslag:
+<details>
+
+<summary>Løsningsforslag:</summary>
 
 ```sql
 SELECT person.fornavn, COUNT(fjelltur.fjell_id) AS antall_turer
-FROM person 
+FROM person
 LEFT JOIN fjelltur ON person.brukernavn = fjelltur.brukernavn
 GROUP BY person.brukernavn;
 ```
+
+</details>
 
 Husk at du kan lese mer om forskjellige JOIN-typer [øverst i dokumentet](#tips-og-hjelp-til-oppgavene).
 
 ## Oppgave 12
 
 Tell hvor mange turer en gitt person har gått. Du kan bruke brukernavnet "hausnes" for å hente dette.
-Løsningsforslag:
+
+<details>
+
+<summary>Løsningsforslag:</summary>
 
 ```sql
 SELECT person.fornavn, COUNT(fjelltur.fjell_id) AS antall_turer
-FROM person 
+FROM person
 LEFT JOIN fjelltur ON person.brukernavn = fjelltur.brukernavn
 WHERE person.brukernavn = 'hausnes';
 ```
+
+</details>
 
 Husk at du kan lese mer om forskjellige JOIN-typer [øverst i dokumentet](#tips-og-hjelp-til-oppgavene).
 
@@ -182,7 +232,9 @@ Husk at du kan lese mer om forskjellige JOIN-typer [øverst i dokumentet](#tips-
 
 Vis en liste over alle fjellene som en gitt person har gått. Du kan for eksempel hente alle fjellene som "Jo Bjørnar" har gått.
 
-Løsningsforslag:
+<details>
+
+<summary>Løsningsforslag:</summary>
 
 ```sql
 SELECT fjell.fjellnavn
@@ -192,6 +244,8 @@ JOIN fjell ON fjelltur.fjell_id = fjell.fjell_id
 WHERE person.fornavn = 'Jo Bjørnar';
 ```
 
+</details>
+
 Du kan eventuelt hente denne informasjonen basert på noe annet enn fornavn. Hvorfor kan det være viktig, tror du? Hva burde du velge? Korriger koden til å gjøre dette.
 
 Husk at du kan lese mer om forskjellige JOIN-typer [øverst i dokumentet](#tips-og-hjelp-til-oppgavene).
@@ -200,10 +254,14 @@ Husk at du kan lese mer om forskjellige JOIN-typer [øverst i dokumentet](#tips-
 
 Vis all informasjon unntatt brukernavnet om en gitt person.
 
-Løsningsforslag:
+<details>
+
+<summary>Løsningsforslag:</summary>
 
 ```sql
 SELECT person.fornavn, person.etternavn, person.epost
 FROM person
 WHERE brukernavn = 'hausnes';
 ```
+
+</details>
