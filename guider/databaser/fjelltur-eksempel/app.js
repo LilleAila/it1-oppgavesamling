@@ -8,13 +8,16 @@ const PORT = 3000;
 const Database = require('better-sqlite3');
 const db = new Database('fjelltur.db');
 
+// Middleware for å servere statiske filer fra "public" mappen
+app.use(express.static('public'));
+
 // CORS-middleware for å tillate forespørsler fra andre domener
 const cors = require('cors');
 app.use(cors());
 
-// Eksempel på en rute som henter alle fjell og hoydene deres
-app.get('/api/alle_fjell_hoyde', (req, res) => {
-    const rows = db.prepare('SELECT fjellnavn, hoyde FROM fjell').all();
+// Eksempel på en rute som henter alle fjell, beskrivelse, høydene og bilde deres
+app.get('/api/fjell_info', (req, res) => {
+    const rows = db.prepare('SELECT fjellnavn, hoyde, beskrivelse, foto FROM fjell').all();
     res.json(rows);
 });
 
