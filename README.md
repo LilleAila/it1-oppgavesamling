@@ -21,7 +21,7 @@ Dette er et forsøk på å samle guider, oppgaver, løsningsforslag og eksempler
 - Github og lisensiering, hvilke regler gjeld, og brukes din kode for å trene opp KI-modeller?: [Les guide](./guider/guide%20-%20github%20og%20lisensiering.md)
 
 ### Databaser og SQL
-- Fra datamodell til database, og en enkel webapplikasjon som bruker denne databasen. [Les guide](./guider/databaser/fjelltur-eksempel/readme.md)
+- Fra datamodell til database, og en enkel webapplikasjon som bruker denne databasen. [Les guide](./guider/databaser/fjelltur-eksempel/README.md)
     - "Innebygd" i denne guiden er det også en egen del tilknyttet SQL, med oppgaver og løsningsforslag. [Les guide](./guider/databaser/fjelltur-eksempel/SQL%20-%20oppgaver%20og%20l%C3%B8sningsforslag.md)
 - Databaser og begreper. [Les guide](./guider/databaser/guide%20-%20begreper%20rundt%20databaser.md)
 - Hvorfor ikke bruke mange-til-mange-forhold (N:M) i databaseene våre? [Les guide](./guider/databaser/guide%20-%20mange-til-mange%20hvorfor%20ikke.md)
