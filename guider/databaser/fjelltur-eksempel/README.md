@@ -42,7 +42,7 @@ Lettvint løsning:
 
 Øv deg på å "spørre" databasen, og hente ut den informasjonen du er interessert i. 
 
-Her kan du finne oppgaver og løsningsforslag for SQL-spørringer mot denne databasen: [SQL - oppgaver og løsningsforslag](SQL%20-%20oppgaver%20og%20l%C3%B8sningsforslag.md)
+Her kan du finne oppgaver og løsningsforslag for SQL-spørringer mot denne databasen: [SQL - oppgaver og løsningsforslag](./SQL%20-%20oppgaver%20og%20løsningsforslag.md)
 
 ## Lage en webapplikasjon
 
