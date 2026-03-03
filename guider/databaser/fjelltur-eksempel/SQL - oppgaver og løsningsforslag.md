@@ -43,6 +43,20 @@ SELECT * FROM fjell;
 
 ## Oppgave 2
 
+Hent all informasjon om et gitt fjell, for eksempel Fanaråken (fjell_id = 1).
+
+<details>
+
+<summary>Løsningsforslag:</summary>
+
+```sql
+SELECT * FROM fjell
+WHERE fjell_id = 1;
+```
+</details>
+
+## Oppgave 3
+
 Hent bare fjellnavn og høyde for alle fjellene.
 
 <details>
@@ -55,7 +69,7 @@ SELECT fjellnavn, hoyde FROM fjell;
 
 </details>
 
-## Oppgave 3
+## Oppgave 4
 
 Hent bare fjellnavn og høyde for alle fjellene som er høyere enn 2000 meter.
 
@@ -66,25 +80,6 @@ Hent bare fjellnavn og høyde for alle fjellene som er høyere enn 2000 meter.
 ```sql
 SELECT fjellnavn, hoyde FROM fjell
 WHERE hoyde > 2000;
-```
-
-</details>
-
-## Oppgave 4
-
-Hent bare fjellnavn og høyde for alle fjellene som har akkurat samme høyde. **NB: Avansert!**
-
-<details>
-
-<summary>Løsningsforslag:</summary>
-
-```sql
-SELECT fjellnavn, hoyde FROM fjell
-WHERE hoyde IN (
-    SELECT hoyde FROM fjell
-    GROUP BY hoyde
-    HAVING COUNT(*) > 1
-);
 ```
 
 </details>
@@ -137,7 +132,7 @@ JOIN fjell ON fjelltur.fjell_id = fjell.fjell_id;
 
 ## Oppgave 8
 
-Hent det samme som fra oppgave 7, men bare for fjellturer til Fanaråken (fjell_id = 1).
+Hent det samme som fra forrige oppgave, men bare for fjellturer til Fanaråken (fjell_id = 1).
 
 <details>
 
@@ -172,26 +167,6 @@ WHERE fjell_id = 1;
 
 ## Oppgave 10
 
-Tell hvor mange turer det har vært totalt i 2025 for seg, og 2026 for seg. **NB: Avansert!**
-
-<details>
-
-<summary>Løsningsforslag:</summary>
-
-```sql
-SELECT *
-FROM fjelltur
-WHERE strftime('%Y', fjelltur.tidspunkt) = '2025';
-
-SELECT *
-FROM fjelltur
-WHERE strftime('%Y', fjelltur.tidspunkt) = '2026';
-```
-
-</details>
-
-## Oppgave 11
-
 Tell hvor mange turer hver person har gått. Vis fornavn og "antall_turer". NB: Antall turer er ikke et eget felt, så du må telle dette ved hjelp av en spørring.
 
 <details>
@@ -211,7 +186,7 @@ NB: Inne i COUNT kan du bruke et hvilket som helst felt fra den tabellen, altså
 
 Husk at du kan lese mer om forskjellige JOIN-typer [øverst i dokumentet](#tips-og-hjelp-til-oppgavene).
 
-## Oppgave 12
+## Oppgave 11
 
 Tell hvor mange turer en gitt person har gått. Du kan bruke brukernavnet "hausnes" for å hente dette.
 
@@ -230,7 +205,7 @@ WHERE person.brukernavn = 'hausnes';
 
 Husk at du kan lese mer om forskjellige JOIN-typer [øverst i dokumentet](#tips-og-hjelp-til-oppgavene).
 
-## Oppgave 13
+## Oppgave 12
 
 Vis en liste over alle fjellene som en gitt person har gått. Du kan for eksempel hente alle fjellene som "Jo Bjørnar" har gått.
 
@@ -252,7 +227,7 @@ Du kan eventuelt hente denne informasjonen basert på noe annet enn fornavn. Hvo
 
 Husk at du kan lese mer om forskjellige JOIN-typer [øverst i dokumentet](#tips-og-hjelp-til-oppgavene).
 
-## Oppgave 14
+## Oppgave 13
 
 Vis all informasjon unntatt brukernavnet om en gitt person.
 
@@ -264,6 +239,47 @@ Vis all informasjon unntatt brukernavnet om en gitt person.
 SELECT person.fornavn, person.etternavn, person.epost
 FROM person
 WHERE brukernavn = 'hausnes';
+```
+
+</details>
+
+# Avanserte oppgaver
+
+## Bonusoppgave 1
+
+Tell hvor mange turer det har vært totalt i 2025 for seg, og 2026 for seg. **NB: Avansert!**
+
+<details>
+
+<summary>Løsningsforslag:</summary>
+
+```sql
+SELECT *
+FROM fjelltur
+WHERE strftime('%Y', fjelltur.tidspunkt) = '2025';
+
+SELECT *
+FROM fjelltur
+WHERE strftime('%Y', fjelltur.tidspunkt) = '2026';
+```
+
+</details>
+
+## Bonusoppgave 2
+
+Hent bare fjellnavn og høyde for alle fjellene som har akkurat samme høyde. **NB: Avansert!**
+
+<details>
+
+<summary>Løsningsforslag:</summary>
+
+```sql
+SELECT fjellnavn, hoyde FROM fjell
+WHERE hoyde IN (
+    SELECT hoyde FROM fjell
+    GROUP BY hoyde
+    HAVING COUNT(*) > 1
+);
 ```
 
 </details>
