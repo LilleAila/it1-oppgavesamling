@@ -46,9 +46,19 @@ Her kan du finne oppgaver og løsningsforslag for SQL-spørringer mot denne data
 
 ## Lage en webapplikasjon
 
+Vi skal nå lage en enkel webapplikasjon som kan hente data fra SQLite-databasen, og vise det i en nettleser. Vi skal bruke Node.js og Express for å lage en enkel server, og `better-sqlite3` for å håndtere SQLite-databasen.
+
+Sluttproduktet kan se slik ut:
+
+![Eksempel på frontend](../../../bilder/fjellturer-visning.png)
+
+Her følger en steg-for-steg guide for hvordan du kan lage dette.
+
 ### Initialisere et nytt Node-prosjekt
 
-Lag deg først en ny mappe for prosjektet, og initialiser et nytt Node-prosjekt i denne mappen. Her skal du lagre all koden for webapplikasjonen din, og det er her du skal installere nødvendige avhengigheter. Følg med på instruksjonene, du må etter hvert opprette mapper og filer for å kunne lage en fungerende applikasjon.
+Lag deg først en ny mappe for prosjektet, og flytt database-filen inn i denne.
+
+Deretter initialiser du et nytt Node-prosjekt i denne mappen. Åpne terminalen, naviger til mappen, og kjør følgende kommando:
 
 ```bash
 npm init -y
@@ -56,22 +66,29 @@ npm init -y
 
 Kontroller at `package.json` har blitt opprettet, og at det inneholder en "main" som peker på `app.js` (eller hva du har valgt å kalle hovedfilen din).
 
+Merk deg at du skal lagre all koden for webapplikasjonen din i denne mappen, og det er her du skal installere nødvendige avhengigheter. Følg med på instruksjonene, da du etter hvert må opprette nye mapper og filer for å kunne lage en fungerende applikasjon.
+
 ### Installere nødvendige avhengigheter
+
+Fortsatt fra terminalen; kjør følgende kommando for å installere Express, better-sqlite3 og CORS:
 
 ```bash
 npm install express better-sqlite3 cors
 ```
+
 Kontroller at `package.json` har blitt oppdatert med de nye avhengighetene, og at det har blitt opprettet en `node_modules`-mappe med disse pakkene.
 
 Tenk etter hva du har gjort. Hva er Express? Hva er better-sqlite3? Hva er CORS?
 
 ### Ikke last opp node_modules til GitHub
 
-Det er vanlig praksis å ikke laste opp `node_modules`-mappen til GitHub, da denne kan være veldig stor, og den inneholder filer som kan gjenopprettes ved å kjøre `npm install` basert på `package.json`. For å unngå at `node_modules` blir lastet opp, kan du opprette en `.gitignore`-fil i rotmappen av prosjektet ditt, og legge til følgende linje i denne filen:
+Det er vanlig praksis å ikke laste opp `node_modules`-mappen til GitHub, da denne kan være veldig stor, og den uansett inneholder filer som kan gjenopprettes ved å kjøre `npm install` basert på `package.json`. For å unngå at `node_modules` blir lastet opp, kan du opprette en `.gitignore`-fil i rotmappen av prosjektet ditt, og legge til følgende linje i denne filen:
 
 ```
 node_modules/
 ```
+
+Dette vil fortelle Git at den skal ignorere `node_modules`-mappen, og ikke laste den opp til GitHub. Kontroller at `.gitignore`-filen er opprettet, og at den inneholder denne linjen.
 
 ### Lage en enkel Express-server
 
@@ -108,7 +125,7 @@ app.listen(PORT, () => {
 
 Du starter serveren ved å kjøre `node app.js` i terminalen.
 
-Kontroller at serveren starter uten feil, og at du kan nå `http://localhost:3000/api/fjell_info` i nettleseren, og se dataene fra databasen. Hvilket format får du dataene i? Hvordan kan du bruke dette i en frontend-applikasjon senere?
+Kontroller at serveren starter uten feil, at du kan nå `http://localhost:3000/api/fjell_info` i nettleseren, og se dataene fra databasen. Hvilket format får du dataene i? Hvordan kan du bruke dette i en frontend-applikasjon senere?
 
 ## Lage en frontend-applikasjon
 
@@ -121,9 +138,14 @@ Vi må utvide `app.js` for å servere statiske filer, slik at vi kan ha en HTML-
 app.use(express.static('public'));
 ```
 
-Opprett en mappe som heter `public`, og lag en `index.html`- og tilknyttet `code.js`-fil inne i den.
+Opprett en mappe som heter `public`, og lag tre filer her:
+- `index.html`
+- `code.js`
+- `style.css`
 
-I `index.html` kan du lage en enkel struktur for å vise dataene, og inkludere `code.js`:
+Koble disse filene sammen.
+
+I `index.html` kan du lage en enkel struktur for å vise dataene, og inkludere `code.js` og `style.css`. For eksempel:
 
 ```html
 <!DOCTYPE html>
@@ -133,6 +155,7 @@ I `index.html` kan du lage en enkel struktur for å vise dataene, og inkludere `
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fjell</title>
     <script src="code.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Fylles ut av JS -->
